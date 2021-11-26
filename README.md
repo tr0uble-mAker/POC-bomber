@@ -12,7 +12,7 @@
        
       +--------- poc_bomber.py (启动POC-bomber)
       | 
-      +--------- inc(存放POC-bomber框架的配置文件)
+      +--------- inc(存放支撑POC-bomber框架运行的核心文件)
       |
       \--------- pocs(POC存放列表)----------- framework(存放框架漏洞POC)
                                       |

@@ -73,9 +73,9 @@ def logo():
                  @@@@@ 
                  
                                                                                         
-                                        POC bomber                          Version 1.00
-                                                                            Author tr0uble_mAker
-                                                                            Whoami https://github.com/tr0uble-mAker
+                                   POC bomber                       Version 1.00
+                                                                    Author tr0uble_mAker
+                                                                    Whoami https://github.com/tr0uble-mAker
                                                                
                                                                
                         /*!   你的系统似乎出了些问题, leT%27s ChEcK iT !!!  */                                                                         

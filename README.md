@@ -5,11 +5,10 @@ POC bomber 是一款漏洞检测工具，旨在利用大量POC快速发现目标
 
 支持weblogic，struct2，tp5，redis未授权访问等易受攻击组件的漏洞检测，支持单个目标检测和批量检测，支持多线程并能够在当前目录生成漏洞报告
 
-用法:
-
+## 用法      
       python3 poc_bomber.py 
 
-配置文件: /inc/config.py
+配置文件:  /inc/config.py
 
 目录结构:
        
@@ -26,8 +25,10 @@ POC bomber 是一款漏洞检测工具，旨在利用大量POC快速发现目标
                                        \----- webs(常见web页面漏洞POC)
       
       
-      
-     
+## Screenshots    
+![image](https://user-images.githubusercontent.com/71172892/143585798-9d7e505d-42f0-4b8f-ae0c-fd400466f2b5.png)
+![image](https://user-images.githubusercontent.com/71172892/143586027-5e54e484-edc7-4551-a536-4f005efa5048.png)      
+
 项目持续更新中，欢迎各位师傅贡献POC共筑网络安全！  
 有问题欢迎issues留言: https://github.com/tr0uble-mAker/POC-bomber/issues    
 联系: 929305053@qq.com    

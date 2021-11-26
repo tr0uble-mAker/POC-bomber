@@ -9,9 +9,9 @@
 
 目录结构:
        
-      +--------- poc_bomber.py (启动POC bomber)
+      +--------- poc_bomber.py (启动POC-bomber)
       | 
-      +--------- inc(配置文件)
+      +--------- inc(存放POC-bomber框架的配置文件)
       |
       \--------- pocs(POC存放列表)----------- framework(存放框架漏洞POC)
                                       |
@@ -23,7 +23,7 @@
       
       
       
-      
+     
 项目持续更新中，欢迎各位师傅贡献POC共筑网络安全！
 有问题欢迎issues留言
 联系: 929305053@qq.com

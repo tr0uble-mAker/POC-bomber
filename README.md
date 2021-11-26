@@ -7,17 +7,17 @@
       /inc/config.py
 目录结构:
        
-      /--------- poc_bomber.py (启动POC bomber)
+       /--------- poc_bomber.py (启动POC bomber)
       | 
       |--------- inc(配置文件)
       |
-      \--------- pocs(POC存放列表)----------- framework(存放框架漏洞POC)
+       \--------- pocs(POC存放列表)----------- framework(存放框架漏洞POC)
                                       |
                                       |------ middleware(中间件漏洞POC)
                                       |
                                       |------ ports(常见端口漏洞,主机服务漏洞POC)
                                       |
-                                      \------ webs(常见web页面漏洞POC)
+                                       \------ webs(常见web页面漏洞POC)
       
       
       

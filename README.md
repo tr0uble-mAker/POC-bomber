@@ -3,8 +3,6 @@
 
 用法:
 
-
-
       python3 poc_bomber.py 
 
 配置文件:

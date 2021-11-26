@@ -28,5 +28,5 @@ POC bomber 是一款漏洞检测工具，旨在利用大量POC快速发现目标
       
      
 项目持续更新中，欢迎各位师傅贡献POC共筑网络安全！  
-有问题欢迎issues留言  
+有问题欢迎issues留言: https://github.com/tr0uble-mAker/POC-bomber/issues    
 联系: 929305053@qq.com    

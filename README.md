@@ -20,11 +20,11 @@ POC bomber 是一款漏洞检测工具，旨在利用大量POC快速发现目标
       |
       \--------- pocs(POC存放列表)----------- framework(存放框架漏洞POC)
                                       |
-                                      |------ middleware(中间件漏洞POC)
+                                      |------ middleware(存放中间件漏洞POC)
                                       |
-                                      |------ ports(常见端口漏洞,主机服务漏洞POC)
+                                      |------ ports(存放常见端口漏洞,主机服务漏洞POC)
                                       |
-                                       \----- webs(常见web页面漏洞POC)
+                                       \----- webs(存放常见web页面漏洞POC)
       
       
 ## Screenshots    

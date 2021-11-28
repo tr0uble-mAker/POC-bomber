@@ -8,6 +8,7 @@
 ##########################################################
 
 # 加载POC
+from pocs.framework.thinkphp.thinkphp32x_rce import thinkphp32x_rce
 from pocs.framework.thinkphp.thinkphp2_rce import thinkphp2_rce
 from pocs.framework.thinkphp.thinkphp5_sqli import thinkphp5_sqli
 from pocs.framework.thinkphp.thinkphp5022_5129 import thinkphp5022_5129_rce

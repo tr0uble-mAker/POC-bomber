@@ -2,6 +2,7 @@ import re
 import socket
 from time import sleep
 from urllib.parse import urlparse
+from pocs.middleware.weblogic.CVE_2020_14882 import CVE_2020_14882
 from pocs.middleware.weblogic.CVE_2020_2551 import CVE_2020_2551
 from pocs.middleware.weblogic.CVE_2019_2890 import CVE_2019_2890
 from pocs.middleware.weblogic.CVE_2019_2729 import CVE_2019_2729
@@ -19,6 +20,7 @@ from pocs.middleware.weblogic.CVE_2014_4210 import CVE_2014_4210
 
 def weblogic(url):          # 返回poc检测函数字符串列表
     poclist = [
+        'CVE_2020_14882("{0}")'.format(url),
         'CVE_2020_2551("{0}")'.format(url),
         'CVE_2019_2890("{0}")'.format(url),
         'CVE_2019_2729("{0}")'.format(url),

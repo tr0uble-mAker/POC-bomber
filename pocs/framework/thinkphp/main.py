@@ -28,6 +28,7 @@ import re
 
 def thinkphp(url):          # 返回poc检测函数字符串列表
     poclist = [
+        'thinkphp32x_rce("{0}")'.format(url),
         'thinkphp2_rce("{0}")'.format(url),
         'thinkphp5_sqli("{0}")'.format(url),
         'thinkphp5022_5129_rce("{0}")'.format(url),
@@ -46,12 +47,4 @@ def thinkphp(url):          # 返回poc检测函数字符串列表
     ]
     return poclist
 
-
-
-if __name__ == '__main__':
-    url = input('输入目标URL:')
-    poclist = thinkphp(url)
-
-    report = run.run(poclist)
-    output.output(report)
 

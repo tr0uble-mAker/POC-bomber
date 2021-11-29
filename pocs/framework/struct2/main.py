@@ -15,6 +15,7 @@ from pocs.framework.struct2.s2_046 import s2_046
 from pocs.framework.struct2.s2_048 import s2_048
 from pocs.framework.struct2.s2_052 import s2_052
 from pocs.framework.struct2.s2_053 import s2_053
+from pocs.framework.struct2.s2_057 import s2_057
 from pocs.framework.struct2.s2_061 import s2_061
 
 def struct2(url):
@@ -35,5 +36,6 @@ def struct2(url):
         's2_046("{0}")'.format(url),
         's2_048("{0}")'.format(url),
         's2_053("{0}")'.format(url),
+        's2_057("{0}")'.format(url),
     ]
     return poclist

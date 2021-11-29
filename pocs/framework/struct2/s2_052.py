@@ -116,7 +116,10 @@ AAoAAQACABYAEAAJ</byte-array>
     }
     vulurl = urllib.parse.urljoin(url, '/orders.xhtml')
     try:
-        requests.get(vulurl)
+        req = requests.get(vulurl, timeout=3)
+        req2 = requests.get(urllib.parse.urljoin(url, '/asdjyjansa'), timeout=3)
+        if req.status_code == 200 and req2.status_code == 200:
+            return relsult
         pass
     except:
         return relsult

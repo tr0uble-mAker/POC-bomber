@@ -15,10 +15,12 @@ from pocs.framework.struct2.s2_046 import s2_046
 from pocs.framework.struct2.s2_048 import s2_048
 from pocs.framework.struct2.s2_052 import s2_052
 from pocs.framework.struct2.s2_053 import s2_053
+from pocs.framework.struct2.s2_061 import s2_061
 
 def struct2(url):
     poclist = [
         's2_052("{0}")'.format(url),
+        's2_061("{0}")'.format(url),
         's2_001("{0}")'.format(url),
         's2_005("{0}")'.format(url),
         's2_007("{0}")'.format(url),

@@ -59,7 +59,7 @@ class Threads():            # 本项目引用到的线程模块
             for current_thread in self.current_threads:
                 relsult = current_thread.get_result()
                 if relsult is not None:
-                    print('\n[+] 正在检测' + str(relsult['name']))
+                    print('\n[+] 正在检测: ' + str(relsult['name']))
                     self.current_threads.remove(current_thread)
                     if relsult['vulnerable']:
                         self.report.append(relsult)

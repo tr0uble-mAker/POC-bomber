@@ -1,13 +1,17 @@
-from pocs.middleware.jboss.CVE_2017_12149 import CVE_2017_12149
-from pocs.middleware.jboss.CVE_2017_7504 import CVE_2017_7504
-from pocs.middleware.jboss.CVE_2017_7501 import CVE_2017_7501
+#!/usr/bin/env python
+# coding=utf-8
 
-def jboss(url):          # 返回poc检测函数字符串列表
-    poclist = [
-        'CVE_2017_12149("{0}")'.format(url),
-        'CVE_2017_7504("{0}")'.format(url),
-        'CVE_2017_7504("{0}")'.format(url),
+from pocs.middleware.apache.main import *
+from pocs.middleware.weblogic.main import *
+from pocs.middleware.jboss.main import *
 
 
-    ]
+def middleware(url):
+    print('\n[+] 正在加载 中间件漏洞 poc检测模块......')
+    poclist = []
+    poclist = poclist + weblogic(url)
+    poclist = poclist + apache(url)
+    poclist = poclist + jboss(url)
+
+
     return poclist

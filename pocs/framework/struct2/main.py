@@ -20,7 +20,7 @@ from pocs.framework.struct2.s2_061 import s2_061
 
 def struct2(url):
     poclist = [
-        's2_052("{0}")'.format(url),
+        # 's2_052("{0}")'.format(url),
         's2_061("{0}")'.format(url),
         's2_001("{0}")'.format(url),
         's2_005("{0}")'.format(url),

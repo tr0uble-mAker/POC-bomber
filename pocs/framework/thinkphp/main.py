@@ -43,7 +43,7 @@ def thinkphp(url):          # 返回poc检测函数字符串列表
         'thinkphp_multi_sql_leak("{0}")'.format(url),
         'thinkphp_pay_orderid_sqli("{0}")'.format(url),
         'thinkphp_request_input_rce("{0}")'.format(url),
-        'thinkphp_timebased_sqli("{0}")'.format(url),
+        # 'thinkphp_timebased_sqli("{0}")'.format(url),
         'thinkphp_view_recent_xff_sqli("{0}")'.format(url),
     ]
     return poclist

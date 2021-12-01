@@ -45,3 +45,5 @@ def CVE_2021_40870(base_url):
             return relsult
     except:
         return relsult
+
+

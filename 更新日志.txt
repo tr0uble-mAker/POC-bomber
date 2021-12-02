@@ -1,5 +1,5 @@
 2021.12.2   新增致远OA漏洞检测模块    /pocs/web/seeyon
-            新增POC 致远 OA A8 htmlofficeservlet getshell 漏洞     /pocs/web/seeyon/seeyon_oa_a8_htmlofficeservlet_getshell.py
+            新增POC 致远OA A8 htmlofficeservlet getshell 漏洞     /pocs/web/seeyon/seeyon_oa_a8_htmlofficeservlet_getshell.py
                     致远OA Session泄漏漏洞(后台可getshell)     /pocs/web/seeyon/seeyon_get_sessionslist.py
                     致远OA A6 sql注入漏洞     /pocs/web/seeyon/seeyon_a6_sqli.py
             更新redis未授权检测poc(检测效率更高，可利用poc更改redis默认端口6379进行检测)    /pocs/ports/redis_6379.py   
@@ -9,7 +9,7 @@
                     泛微OA V8前台Sql注入     /pocs/web/weaver/e_cology_v8_sqli.py
                     泛微OA Bsh 远程代码执行漏洞 CNVD-2019-32204     /pocs/web/weaver/CNVD_2019_32204.py
                     泛微OA WorkflowCenterTreeData接口注入(限oracle数据库)     /pocs/web/weaver/CNVD_2019_34241.py
-                    泛微 OA WorkflowServiceXml RCE     /pocs/web/weaver/e_cology_workflowservicexml_rce.py
+                    泛微OA WorkflowServiceXml RCE     /pocs/web/weaver/e_cology_workflowservicexml_rce.py
                     泛微OA weaver.common.Ctrl 任意文件上传漏洞     /pocs/web/weaver/weaver_common_ctrl_upload.py
                     
 2021.11.30  新增jboss漏洞检测模块     /pocs/middleware/jboss

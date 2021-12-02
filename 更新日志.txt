@@ -7,7 +7,7 @@
                     Ueditor编辑器1.4.3.3 解析漏洞     /pocs/web/ueditor_1433_parsing_vulnerabilitly.py
                     CVE-2021-21972 vSphere Client RCE     /pocs/web/CVE_2021_21972.py
                     CVE-2021-40870 Aviatrix-Controller 远程代码执行     /pocs/web/CVE_2021_40870.py
-            新增POC Redis 4.x/5.x 未授权访问漏洞     /pocs/ports/redis_6379.py
+                    Redis 4.x/5.x 未授权访问漏洞     /pocs/ports/redis_6379.py
             新增apache漏洞检测模块    /pocs/middleware/apache
             新增POC CVE-2021-41773     /pocs/middleware/apache/CVE_2021_41773.py
             新增weblogic漏洞检测模块    /pocs/middleware/weblogic

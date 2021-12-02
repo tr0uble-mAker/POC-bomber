@@ -1,0 +1,80 @@
+2021.12.2   新增致远OA漏洞检测模块    /pocs/web/seeyon
+            新增POC 致远OA A8 htmlofficeservlet getshell 漏洞     /pocs/web/seeyon/seeyon_oa_a8_htmlofficeservlet_getshell.py
+                    致远OA Session泄漏漏洞(后台可getshell)     /pocs/web/seeyon/seeyon_get_sessionslist.py
+                    致远OA A6 sql注入漏洞     /pocs/web/seeyon/seeyon_a6_sqli.py
+            更新redis未授权检测poc(检测效率更高，可利用poc更改redis默认端口6379进行检测)    /pocs/ports/redis_6379.py   
+            
+2021.12.1   新增泛微OA漏洞检测模块    /pocs/web/weaver
+            新增POC CNVD-2021-49104——泛微E-Office文件上传漏洞     /pocs/web/weaver/CNVD_2021_49104.py
+                    泛微OA V8前台Sql注入     /pocs/web/weaver/e_cology_v8_sqli.py
+                    泛微OA Bsh 远程代码执行漏洞 CNVD-2019-32204     /pocs/web/weaver/CNVD_2019_32204.py
+                    泛微OA WorkflowCenterTreeData接口注入(限oracle数据库)     /pocs/web/weaver/CNVD_2019_34241.py
+                    泛微OA WorkflowServiceXml RCE     /pocs/web/weaver/e_cology_workflowservicexml_rce.py
+                    泛微OA weaver.common.Ctrl 任意文件上传漏洞     /pocs/web/weaver/weaver_common_ctrl_upload.py
+                    
+2021.11.30  新增jboss漏洞检测模块     /pocs/middleware/jboss
+            新增POC Jboss反序列化漏洞 (CVE-2017-12149)     /pocs/middleware/jboss/CVE_2017_12149.py
+                    Jboss反序列化漏洞 (CVE-2017-7504)     /pocs/middleware/jboss/CVE_2017_7504.py
+                    Jboss反序列化漏洞 (CVE-2017-7501)     /pocs/middleware/jboss/CVE_2017_7501.py
+          
+2021.11.26  新增POC CVE-2021-22205 GitLab 未授权RCE     /pocs/web/CVE_2021_22205.py
+                    Ueditor编辑器1.4.3.3 解析漏洞     /pocs/web/ueditor_1433_parsing_vulnerabilitly.py
+                    CVE-2021-21972 vSphere Client RCE     /pocs/web/CVE_2021_21972.py
+                    CVE-2021-40870 Aviatrix-Controller 远程代码执行     /pocs/web/CVE_2021_40870.py
+                    Redis 4.x/5.x 未授权访问漏洞     /pocs/ports/redis_6379.py
+            新增apache漏洞检测模块    /pocs/middleware/apache
+            新增POC CVE-2021-41773     /pocs/middleware/apache/CVE_2021_41773.py
+            新增weblogic漏洞检测模块    /pocs/middleware/weblogic
+            新增POC CVE_2020_14882    /pocs/middleware/weblogic/CVE_2020_14882.py             
+                    CVE_2020_2551    /pocs/middleware/weblogic/CVE_2020_2551.py               
+                    CVE_2019_2890    /pocs/middleware/weblogic/CVE_2019_2890.py               
+                    CVE_2019_2729    /pocs/middleware/weblogic/CVE_2019_2729.py               
+                    CVE_2019_2725    /pocs/middleware/weblogic/CVE_2019_2725.py               
+                    CVE_2018_2894    /pocs/middleware/weblogic/CVE_2018_2894.py               
+                    CVE_2018_2893    /pocs/middleware/weblogic/CVE_2018_2893.py               
+                    CVE_2018_2628    /pocs/middleware/weblogic/CVE_2018_2628.py               
+                    CVE_2017_10271    /pocs/middleware/weblogic/CVE_2017_10271.py            
+                    CVE_2017_3506    /pocs/middleware/weblogic/CVE_2017_3506.py               
+                    CVE_2017_3248    /pocs/middleware/weblogic/CVE_2017_3248.py               
+                    CVE_2016_3510    /pocs/middleware/weblogic/CVE_2016_3510.py               
+                    CVE_2016_0638    /pocs/middleware/weblogic/CVE_2016_0638.py               
+                    CVE_2014_4210   /pocs/middleware/weblogic/CVE_2014_4210.py 
+            新增strucr2框架漏洞检测模块   /pocs/framework/struct2
+            新增POC s2-001    /pocs/framework/struct2/s2_001.py 
+                    s2-005    /pocs/framework/struct2/s2_005.py
+                    s2-007    /pocs/framework/struct2/s2_007.py
+                    s2-008    /pocs/framework/struct2/s2_008.py
+                    s2-009    /pocs/framework/struct2/s2_009.py 
+                    s2-012    /pocs/framework/struct2/s2_012.py 
+                    s2-013    /pocs/framework/struct2/s2_013.py 
+                    s2-015    /pocs/framework/struct2/s2_015.py 
+                    s2-016    /pocs/framework/struct2/s2_016.py 
+                    s2-032    /pocs/framework/struct2/s2_032.py 
+                    s2-045    /pocs/framework/struct2/s2_045.py 
+                    s2-046    /pocs/framework/struct2/s2_046.py 
+                    s2-048    /pocs/framework/struct2/s2_048.py 
+                    s2-052    /pocs/framework/struct2/s2_052.py
+                    s2-053    /pocs/framework/struct2/s2_053.py 
+                    s2-057    /pocs/framework/struct2/s2_057.py
+                    s2-061    /pocs/framework/struct2/s2_061.py
+            新增thinkphp框架漏洞检测模块    /pocs/framework/thinkphp
+            新增POC Thinkphp 2.x rce     /pocs/framework/thinkphp/thinkphp32x_rce.py
+                    ThinkPHP5 SQL Injection Vulnerability && Sensitive Information Disclosure Vulnerability     /pocs/framework/thinkphp/thinkphp2_rce.py
+                    ThinkPHP3.2.x 远程代码执行     /pocs/framework/thinkphp/thinkphp5_sqli.py
+                    Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability     /pocs/framework/thinkphp/thinkphp5022_5129.py
+                    ThinkPHP5 5.0.23 Remote Code Execution Vulnerability     /pocs/framework/thinkphp/thinkphp5023_rce.py
+                    thinkphp_driver_display_rce     /pocs/framework/thinkphp/thinkphp_driver_display_rce.py
+                    thinkphp_index_construct_rce     /pocs/framework/thinkphp/thinkphp_index_construct_rce.py
+                    thinkphp_index_showid_rce     /pocs/framework/thinkphp/thinkphp_index_showid_rce.py
+                    thinkphp_invoke_func_code_exec     /pocs/framework/thinkphp/thinkphp_invoke_func_code_exec.py
+                    thinkphp_lite_code_exec     /pocs/framework/thinkphp/thinkphp_lite_code_exec.py
+                    thinkphp_method_filter_code_exec     /pocs/framework/thinkphp/thinkphp_method_filter_code_exec.py
+                    thinkphp_multi_sql_leak     /pocs/framework/thinkphp/thinkphp_multi_sql_leak.py
+                    thinkphp_pay_orderid_sqli     /pocs/framework/thinkphp/thinkphp_pay_orderid_sqli.py
+                    thinkphp_request_input_rce     /pocs/framework/thinkphp/thinkphp_request_input_rce.py
+                    ThinkPHP SQL Injection Vulnerability(time-based)     /pocs/framework/thinkphp/thinkphp_timebased_sqli.py
+                    thinkphp_view_recent_xff_sqli     /pocs/framework/thinkphp/thinkphp_view_recent_xff_sqli.py
+            创建常见web漏洞poc存放模块     /pocs/web
+            创建框架漏洞poc存放模块        /pocs/framework
+            创建中间件漏洞poc存放模块      /pocs/middle
+            创建主机，端口漏洞poc存放模块  /pocs/ports

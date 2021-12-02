@@ -9,9 +9,9 @@
                     CVE-2021-40870 Aviatrix-Controller 远程代码执行     /pocs/web/CVE_2021_40870.py
             新增POC Redis 4.x/5.x 未授权访问漏洞     /pocs/ports/redis_6379.py
             新增apache漏洞检测模块    /pocs/middleware/apache
-                    CVE-2021-41773     /pocs/middleware/apache/CVE_2021_41773.py
+            新增POC CVE-2021-41773     /pocs/middleware/apache/CVE_2021_41773.py
             新增weblogic漏洞检测模块    /pocs/middleware/weblogic
-                    CVE_2020_14882    /pocs/middleware/weblogic/CVE_2020_14882.py             
+            新增POC CVE_2020_14882    /pocs/middleware/weblogic/CVE_2020_14882.py             
                     CVE_2020_2551    /pocs/middleware/weblogic/CVE_2020_2551.py               
                     CVE_2019_2890    /pocs/middleware/weblogic/CVE_2019_2890.py               
                     CVE_2019_2729    /pocs/middleware/weblogic/CVE_2019_2729.py               
@@ -26,7 +26,7 @@
                     CVE_2016_0638    /pocs/middleware/weblogic/CVE_2016_0638.py               
                     CVE_2014_4210   /pocs/middleware/weblogic/CVE_2014_4210.py 
             新增strucr2框架漏洞检测模块   /pocs/framework/struct2
-                    s2-001    /pocs/framework/struct2/s2_001.py 
+            新增POC s2-001    /pocs/framework/struct2/s2_001.py 
                     s2-005    /pocs/framework/struct2/s2_005.py
                     s2-007    /pocs/framework/struct2/s2_007.py
                     s2-008    /pocs/framework/struct2/s2_008.py
@@ -44,7 +44,7 @@
                     s2-057    /pocs/framework/struct2/s2_057.py
                     s2-061    /pocs/framework/struct2/s2_061.py
             新增thinkphp框架漏洞检测模块    /pocs/framework/thinkphp
-                    Thinkphp 2.x rce     /pocs/framework/thinkphp/thinkphp32x_rce.py
+            新增POC Thinkphp 2.x rce     /pocs/framework/thinkphp/thinkphp32x_rce.py
                     ThinkPHP5 SQL Injection Vulnerability && Sensitive Information Disclosure Vulnerability     /pocs/framework/thinkphp/thinkphp2_rce.py
                     ThinkPHP3.2.x 远程代码执行     /pocs/framework/thinkphp/thinkphp5_sqli.py
                     Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability     /pocs/framework/thinkphp/thinkphp5022_5129.py

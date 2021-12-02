@@ -1,9 +1,25 @@
 import socket
+import re
 from threading import Thread
 from queue import Queue
 from time import sleep, time
 from urllib.parse import urlparse
 
+def is_ip(url):
+    if re.match(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$", url):
+        return True
+    else:
+        return False
+
+def is_open(host, port):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        s.settimeout(1)
+        s.connect((host, int(port)))
+        s.shutdown(2)
+        return True
+    except:
+        return False
 
 def redis_6379(url):
     relsult = {
@@ -14,6 +30,8 @@ def redis_6379(url):
     a = oH.netloc.split(':')
     port = 6379         # redis默认端口是6379
     host = a[0]
+    if is_ip(host) is not True or is_open(host, port) is False:  # 不是ip或端口未开放直接退出
+        return relsult
     if url:
         payload = b'*1\r\n$4\r\ninfo\r\n'  # 发送的数据
         s = socket.socket()
@@ -99,4 +117,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    host = input('host:')
+    print(redis_6379(host))

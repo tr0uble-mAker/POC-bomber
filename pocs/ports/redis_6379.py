@@ -21,23 +21,23 @@ def is_open(host, port):
     except:
         return False
 
-def redis_6379(url):
+def redis_6379(url, port=6379):
     relsult = {
         'name': 'Redis 4.x/5.x 未授权访问漏洞',
         'vulnerable': False
     }
     oH = urlparse(url)
     a = oH.netloc.split(':')
-    port = 6379         # redis默认端口是6379
+    # port = 6379        # redis默认端口是6379
     host = a[0]
-    if is_ip(host) is not True or is_open(host, port) is False:  # 不是ip或端口未开放直接退出
+    if is_open(host, port) is False:  # 端口未开放直接退出
         return relsult
     if url:
         payload = b'*1\r\n$4\r\ninfo\r\n'  # 发送的数据
         s = socket.socket()
         socket.setdefaulttimeout(3)  # 设置超时时间
         try:
-            s.connect((host, port))
+            s.connect((host, int(port)))
             s.send(payload)  # 发送info命令
             response = s.recv(1024).decode()
             s.close()
@@ -45,7 +45,7 @@ def redis_6379(url):
             if response and 'redis_version' in response:
                 relsult['vulnerable'] = True
                 relsult['url'] = url
-                relsult['port'] = '6379'
+                relsult['port'] = port
                 relsult['about'] = 'https://github.com/vulhub/redis-rogue-getshell'
                 return relsult
         except (socket.error, socket.timeout):
@@ -118,4 +118,5 @@ def main():
 
 if __name__ == '__main__':
     host = input('host:')
-    print(redis_6379(host))
+    port = input('port:')
+    print(redis_6379(host, int(port)))

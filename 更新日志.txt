@@ -1,7 +1,16 @@
 2021.12.2   新增致远OA漏洞检测模块    /pocs/web/weaver
             更新redis未授权检测poc(检测效率更高，可利用poc更改redis默认端口6379进行检测)    /pocs/ports/redis_6379.py   
 2021.12.1   新增泛微OA漏洞检测模块    /pocs/web/seeyon
+            新增POC CNVD-2021-49104——泛微E-Office文件上传漏洞     /pocs/web/weaver/CNVD_2021_49104.py
+            泛微OA V8前台Sql注入     /pocs/web/weaver/e_cology_v8_sqli.py
+            泛微OA Bsh 远程代码执行漏洞 CNVD-2019-32204     /pocs/web/weaver/CNVD_2019_32204.py
+            泛微OA WorkflowCenterTreeData接口注入(限oracle数据库)     /pocs/web/weaver/CNVD_2019_34241.py
+            泛微 OA WorkflowServiceXml RCE     /pocs/web/weaver/e_cology_workflowservicexml_rce.py
+            泛微OA weaver.common.Ctrl 任意文件上传漏洞     /pocs/web/weaver/weaver_common_ctrl_upload.py
 2021.11.30  新增jboss漏洞检测模块     /pocs/middleware/jboss
+            新增POC Jboss反序列化漏洞 (CVE-2017-12149)     /pocs/middleware/jboss/CVE_2017_12149.py
+            Jboss反序列化漏洞 (CVE-2017-7504)     /pocs/middleware/jboss/CVE_2017_7504.py
+            Jboss反序列化漏洞 (CVE-2017-7501)     /pocs/middleware/jboss/CVE_2017_7501.py
           
 2021.11.26  新增POC CVE-2021-22205 GitLab 未授权RCE     /pocs/web/CVE_2021_22205.py
                     Ueditor编辑器1.4.3.3 解析漏洞     /pocs/web/ueditor_1433_parsing_vulnerabilitly.py

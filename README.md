@@ -3,7 +3,7 @@ POC bomber 是一款漏洞检测工具，旨在利用大量高危害漏洞的POC
                                   
 本项目收集互联网各种危害性大的 RCE · 任意文件上传 · sql注入 等高危害且能够获取到服务器核心权限的漏洞POC，并集成在 POC bomber 武器库中，利用大量高危害POC对单个或多个目标进行模糊测试，以此快速获取目标服务器权限，适合在红蓝对抗或hvv中帮助红队快速找到突破口进入内网
 
-支持weblogic，jboss，struct2，tp5，redis未授权访问，各大常见OA等易受攻击组件的漏洞检测，支持单个目标检测和批量检测，支持多线程和自定义poc，并能够在当前目录生成漏洞报告
+支持weblogic，jboss，struct2，tp5，redis未授权访问，各大常见OA等易受攻击组件的漏洞检测，支持调用dnslog或ceye平台检测无回显的rce，支持单个目标检测和批量检测，支持多线程和自定义poc，并能够在当前目录生成漏洞报告
 ## 安装
       git clone https://github.com/tr0uble-mAker/POC-bomber.git            
       cd POC-bomber

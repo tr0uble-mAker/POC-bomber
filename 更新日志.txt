@@ -1,4 +1,4 @@
-2021.12.21  新增系统配置文件 dnslog.py 可在编写poc时调用以用来检测无回显的rce,支持dnslog和ceye平台     /inc/dnslog.py    
+2021.12.21  新增系统配置文件 dnslog.py 用来支持无回显rce的漏洞检测,支持dnslog和ceye平台     /inc/dnslog.py    
 2021.12.8   新增POC Apache HTTPD 换行解析漏洞(CVE-2017-15715)     /pocs/middleware/apache/CVE_2017_15715.py
 2021.12.2   新增致远OA漏洞检测模块    /pocs/web/seeyon
             新增POC 致远OA A8 htmlofficeservlet getshell 漏洞     /pocs/web/seeyon/seeyon_oa_a8_htmlofficeservlet_getshell.py

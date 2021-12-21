@@ -1,12 +1,14 @@
-import requests, os
+import requests, os, time
 from inc import config
 
+# 支持dnslog平台和ceye平台(要使用ceye平台在 /inc/config.py 配置api等参数)
 class Dnslog():                    # dnslog默认加载配置文件
     def __init__(self):
         self.sessions = requests.session()
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.81 Safari/537.36 SE 2.X '
         }
+        self.dnslog_timesleep = config.dnslog_timesleep
         self.dnslog_getdomain_url = config.dnslog_getdomain_url
         self.dnslog_getdrep_url = config.dnslog_getrep_url
         self.ceye = config.ceye
@@ -34,6 +36,10 @@ class Dnslog():                    # dnslog默认加载配置文件
                 return rep.text
         except:
             return False
+
+
+    def dnslog_sleep(self):       # dnslog休眠
+        time.sleep(config.dnslog_timesleep)
 
 
 if __name__ == '__main__':

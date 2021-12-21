@@ -30,8 +30,7 @@ def CNVD_2019_32204(target):
                         relsult['payload'] = payload
                         relsult['about'] = 'https://www.cnblogs.com/yyhuni/p/14544814.html, https://blog.csdn.net/dust_hk/article/details/101621462'
                         return relsult
-                    else:
-                        return relsult
+        return relsult
     except:
         return relsult
 

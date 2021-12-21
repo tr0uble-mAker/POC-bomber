@@ -10,8 +10,9 @@ POC bomber 是一款漏洞检测工具，旨在利用大量高危害漏洞的POC
 ## 用法      
       python3 poc_bomber.py 
 
-## 配置文件 
-      /inc/config.py
+## 配置文件    
+      /inc/config.py         
+无回显检测默认使用 dnslog.cn 平台，如使用 ceye 请在配置文件配置相关参数
 
 ## 目录结构:
        

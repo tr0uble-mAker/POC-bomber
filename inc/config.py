@@ -10,3 +10,16 @@ thread_num_single = 3
 # 线程超时时间
 thread_timeout = 15
 
+
+## Dnslog 配置(用于检测无回显rce)
+# dnslog获取域名(默认使用 dnslog.cn 检测)
+dnslog_getdomain_url = 'http://www.dnslog.cn/getdomain.php'
+# dnslog获取响应
+dnslog_getrep_url = 'http://www.dnslog.cn/getrecords.php'
+
+# ceye配置(如果使用ceye在配置完参数后将ceye参数置为True)
+ceye = False
+# 配置ceye域名
+ceye_domain = ''
+# 配置api参数
+ceye_api = ''

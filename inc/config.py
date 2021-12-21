@@ -17,7 +17,7 @@ dnslog_getdomain_url = 'http://www.dnslog.cn/getdomain.php'
 # dnslog获取响应
 dnslog_getrep_url = 'http://www.dnslog.cn/getrecords.php'
 
-# ceye配置(如果使用ceye在配置完参数后将ceye参数置为True)
+# ceye配置(如果使用ceye将ceye参数置为True, 并配置域名和api)
 ceye = False
 # 配置ceye域名
 ceye_domain = ''

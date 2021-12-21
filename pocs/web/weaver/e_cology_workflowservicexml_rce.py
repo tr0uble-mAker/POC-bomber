@@ -54,7 +54,7 @@ def e_cology_workflowservicexml_rce(url):
             relsult['url'] = url
             relsult['whoami'] = res
             relsult['about'] = 'https://www.o2oxy.cn/3561.html'
-            return relsult
+        return relsult
     except:
         return relsult
 

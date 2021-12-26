@@ -126,6 +126,7 @@ def usage():
                 -u  --url      目标url
                 -f  --file     指定目标url文件   
                 -o  --output   指定生成报告的文件
+                --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中启用)
     
     ''')
 if __name__ == '__main__':

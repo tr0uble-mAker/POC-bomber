@@ -9,7 +9,7 @@ max_thread = 300
 
 ## Dnslog 配置(用于检测无回显rce)
 # 使用dnslog开启此开关
-dnslog_flag = True
+dnslog_flag = False
 # dnslog 默认等待时间
 dnslog_timesleep = 6
 # 获取随机域名(默认使用 dnslog.cn 检测)

@@ -8,7 +8,13 @@ POC bomber 是一款漏洞检测工具，旨在利用大量高危害漏洞的POC
       git clone https://github.com/tr0uble-mAker/POC-bomber.git            
       cd POC-bomber
 ## 用法      
-      python3 poc_bomber.py 
+        模式:
+                单目标检测: python3 pocbomber.py -u http://xxx.xxx.xx
+                批量检测:   python3 pocbomber.py -f url.txt -o report.txt 
+        参数:
+                -u  --url      目标url
+                -f  --file     指定目标url文件   
+                -o  --output   指定生成报告的文件(默认不生成报告)
 
 ## 配置文件    
       /inc/config.py         

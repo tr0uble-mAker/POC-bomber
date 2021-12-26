@@ -2,16 +2,22 @@
 # coding=utf-8
 import random, time, os
 
+def get_time1():
+    return time.strftime("@ %Y-%m-%d /%H:%M:%S/", time.localtime())
+
+def get_time2():
+    return time.strftime("%H:%M:%S", time.localtime())
+
 def output(futures, ouput_path=''):
     succeed_report = []
     for future in futures:
         relsult = future.result()
         if relsult['vulnerable']:
-            print('[SUCCESS] 检测到: {0}  目标: {1} !'.format(relsult['name'], relsult['url']))
+            print('[{0}] [SUCCESS] 检测到: {1}  目标: {2} !'.format(get_time2(), relsult['name'], relsult['url']))
             succeed_report.append(relsult)
         else:
-            print('[INFO] 正在检测: {0}'.format(relsult['name']))
-    print('[INFO] 所有检测任务完成, 即将生成报告......')
+            print('[{0}] [INFO] 正在检测: {1}'.format(get_time2(), relsult['name']))
+    print('[{0}] [INFO] 所有检测任务完成, 即将生成报告......'.format(get_time2()))
     if len(succeed_report) != 0:
         print('----')
         for relsult in succeed_report:
@@ -30,11 +36,11 @@ def output(futures, ouput_path=''):
                         data_save(ouput_path, value)
         print('----')
         if ouput_path != '':
-            print('[INFO] 已将报告写入至 {0} !'.format(os.path.join(os.path.abspath('.'), ouput_path)))
+            print('[{0}] [INFO] 已将报告写入至 {1} !'.format(get_time2(), os.path.join(os.path.abspath('.'), ouput_path)))
         else:
-            print('[WARNING] 程序没有生成任何报告类文件以记录此次任务的数据')
+            print('[{0}] [WARNING] 程序没有生成任何报告类文件以记录此次任务的数据'.format(get_time2()))
     else:
-        print('[CRITICAL] 所有测试已结束但是程序未生成任何报告')
+        print('[{0}] [CRITICAL] 所有测试已结束但是程序未生成任何报告'.format(get_time2()))
 
 
 

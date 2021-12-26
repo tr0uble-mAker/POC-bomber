@@ -15,6 +15,7 @@ def get_parser():
     p.add_argument("-u", "--url", type=str, help="测试单条url")
     p.add_argument("-f", "--file", type=str, help="测试多个url文件")
     p.add_argument("-o", "--output", help="报告生成路径(默认不生成报告)")
+    p.add_argument("--dnslog", type=str, help="使用dnslog平台检测无回显漏洞")
     args = parser.parse_args()
     return args
 
@@ -27,6 +28,8 @@ def main():
     target_list = []
     if args.output:
         config.output_path = args.output
+    if args.dnslog:
+        config.dnslog_flag = True
     if args.url and args.file is None:
         target_list.append(args.url)
     elif args.file and args.url is None:

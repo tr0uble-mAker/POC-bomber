@@ -27,25 +27,26 @@ from pocs.framework.thinkphp.thinkphp_view_recent_xff_sqli import thinkphp_view_
 from inc import output, run
 import re
 
-def thinkphp(url):          # 返回poc检测函数字符串列表
+def thinkphp():          # 返回poc检测函数字符串列表
     poclist = [
-        'thinkphp32x_rce("{0}")'.format(url),
-        'thinkphp2_rce("{0}")'.format(url),
-        'thinkphp5_sqli("{0}")'.format(url),
-        'thinkphp5022_5129_rce("{0}")'.format(url),
-        'thinkphp5023_rce("{0}")'.format(url),
-        'thinkphp_driver_display_rce("{0}")'.format(url),
-        'thinkphp_index_construct_rce("{0}")'.format(url),
-        'thinkphp_index_showid_rce("{0}")'.format(url),
-        'thinkphp_invoke_func_code_exec("{0}")'.format(url),
-        'thinkphp_lite_code_exec("{0}")'.format(url),
-        'thinkphp_method_filter_code_exec("{0}")'.format(url),
-        'thinkphp_multi_sql_leak("{0}")'.format(url),
-        'thinkphp_pay_orderid_sqli("{0}")'.format(url),
-        'thinkphp_request_input_rce("{0}")'.format(url),
-        # 'thinkphp_timebased_sqli("{0}")'.format(url),
-        'thinkphp_view_recent_xff_sqli("{0}")'.format(url),
+        'thinkphp32x_rce',
+        'thinkphp2_rce',
+        'thinkphp5_sqli',
+        'thinkphp5022_5129_rce',
+        'thinkphp5023_rce',
+        'thinkphp_driver_display_rce',
+        'thinkphp_index_construct_rce',
+        'thinkphp_index_showid_rce',
+        'thinkphp_invoke_func_code_exec',
+        'thinkphp_lite_code_exec',
+        'thinkphp_method_filter_code_exec',
+        'thinkphp_multi_sql_leak',
+        'thinkphp_pay_orderid_sqli',
+        'thinkphp_request_input_rce',
+        # 'thinkphp_timebased_sqli',
+        'thinkphp_view_recent_xff_sqli',
     ]
     return poclist
+
 
 

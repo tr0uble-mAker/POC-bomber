@@ -18,22 +18,22 @@ from pocs.middleware.weblogic.CVE_2016_0638 import CVE_2016_0638
 from pocs.middleware.weblogic.CVE_2014_4210 import CVE_2014_4210
 
 
-def weblogic(url):          # 返回poc检测函数字符串列表
+def weblogic():          # 返回poc检测函数字符串列表
     poclist = [
-        'CVE_2020_14882("{0}")'.format(url),
-        'CVE_2020_2551("{0}")'.format(url),
-        'CVE_2019_2890("{0}")'.format(url),
-        'CVE_2019_2729("{0}")'.format(url),
-        'CVE_2019_2725("{0}")'.format(url),
-        'CVE_2018_2894("{0}")'.format(url),
-        'CVE_2018_2893("{0}")'.format(url),
-        'CVE_2018_2628("{0}")'.format(url),
-        'CVE_2017_10271("{0}")'.format(url),
-        'CVE_2017_3506("{0}")'.format(url),
-        'CVE_2017_3248("{0}")'.format(url),
-        'CVE_2016_3510("{0}")'.format(url),
-        'CVE_2016_0638("{0}")'.format(url),
-        'CVE_2014_4210("{0}")'.format(url),
+        'CVE_2020_14882',
+        'CVE_2020_2551',
+        'CVE_2019_2890',
+        'CVE_2019_2729',
+        'CVE_2019_2725',
+        'CVE_2018_2894',
+        'CVE_2018_2893',
+        'CVE_2018_2628',
+        'CVE_2017_10271',
+        'CVE_2017_3506',
+        'CVE_2017_3248',
+        'CVE_2016_3510',
+        'CVE_2016_0638',
+        'CVE_2014_4210',
 
     ]
     return poclist

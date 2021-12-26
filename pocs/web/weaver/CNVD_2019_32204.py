@@ -2,7 +2,7 @@
 # 泛微OA Bsh 远程代码执行漏洞 CNVD-2019-32204
 # Fofa:  app="泛微-协同办公OA"
 import requests
-import sys, re
+import sys,re
 import urllib
 
 

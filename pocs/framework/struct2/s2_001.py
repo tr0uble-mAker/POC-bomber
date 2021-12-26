@@ -10,7 +10,7 @@ def s2_001(url):
     try:
         s = requests.Session()
         response = s.get(url, timeout=3)
-        forms = re.findall(r'<form.*</form>', response.text, re.DOTALL)
+        forms = re.findall(r'<form.+?</form>', response.text, re.DOTALL)
         for form in forms:
             action = re.findall(r'action="([^"]*)"', form)[0]
             vulurl = urllib.parse.urljoin(url, action)

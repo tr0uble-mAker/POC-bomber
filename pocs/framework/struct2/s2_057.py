@@ -27,3 +27,4 @@ def s2_057(url):
 if __name__ == '__main__':
     url = input('url:')
     print(s2_057(url))
+

@@ -6,12 +6,11 @@ from pocs.middleware.weblogic.main import *
 from pocs.middleware.jboss.main import *
 
 
-def middleware(url):
-    print('\n[+] 正在加载 中间件漏洞 poc检测模块......')
+def middleware():
     poclist = []
-    poclist = poclist + weblogic(url)
-    poclist = poclist + apache(url)
-    poclist = poclist + jboss(url)
+    poclist = poclist + weblogic()
+    poclist = poclist + apache()
+    poclist = poclist + jboss()
 
 
     return poclist

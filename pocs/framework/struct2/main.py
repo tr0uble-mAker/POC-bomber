@@ -18,24 +18,34 @@ from pocs.framework.struct2.s2_053 import s2_053
 from pocs.framework.struct2.s2_057 import s2_057
 from pocs.framework.struct2.s2_061 import s2_061
 
-def struct2(url):
+def struct2():
     poclist = [
-        # 's2_052("{0}")'.format(url),
-        's2_061("{0}")'.format(url),
-        's2_001("{0}")'.format(url),
-        's2_005("{0}")'.format(url),
-        's2_007("{0}")'.format(url),
-        's2_008("{0}")'.format(url),
-        's2_009("{0}")'.format(url),
-        's2_012("{0}")'.format(url),
-        's2_013("{0}")'.format(url),
-        's2_015("{0}")'.format(url),
-        's2_016("{0}")'.format(url),
-        's2_032("{0}")'.format(url),
-        's2_045("{0}")'.format(url),
-        's2_046("{0}")'.format(url),
-        's2_048("{0}")'.format(url),
-        's2_053("{0}")'.format(url),
-        's2_057("{0}")'.format(url),
+        's2_057',
+        # 's2_052',
+        's2_061',
+        's2_001',
+        's2_005',
+        's2_007',
+        's2_008',
+        's2_009',
+        's2_012',
+        's2_013',
+        's2_015',
+        's2_016',
+        's2_032',
+        's2_045',
+        's2_046',
+        's2_048',
+        's2_053',
     ]
     return poclist
+
+if __name__ == '__main__':
+    url = input('struct2全版本检测,输入url:')
+    report = []
+    for poc in struct2():
+        relsult = eval(poc + '("{0}")'.format(url))
+        if relsult['vulnerable']:
+            report.append(relsult)
+    for r in report:
+        print(r)

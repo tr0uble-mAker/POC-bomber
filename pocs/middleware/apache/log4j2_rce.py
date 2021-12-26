@@ -104,6 +104,7 @@ def log4j2_rce(url):
                 relsult['url'] = url
                 relsult['verify_dnslog'] = target_dnslog_domain
                 relsult['exp'] = 'https://github.com/nice0e3/log4j_POC'
+
         return relsult
     except:
         return relsult

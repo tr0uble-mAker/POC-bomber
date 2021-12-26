@@ -41,7 +41,7 @@ def main():
 
     print('\n[*] starting {0}\n'.format(get_time()))
     poc_list = init.get_poc_list()
-    print('[INFO] 检测到 {0} 个目标, 已加载 {1} 条POC'.format(len(target_list), len(poc_list)))
+    print('[{0}] [INFO] 检测到 {1} 个目标, 已加载 {2} 条POC'.format(get_time(), len(target_list), len(poc_list)))
     if run.run(target_list, poc_list, config.output_path):
         print('\n[+] ending {0}\n'.format(get_time()))
     else:

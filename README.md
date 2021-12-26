@@ -15,6 +15,7 @@ POC bomber 是一款漏洞检测工具，旨在利用大量高危害漏洞的POC
                 -u  --url      目标url
                 -f  --file     指定目标url文件   
                 -o  --output   指定生成报告的文件(默认不生成报告)
+                --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中启用)
 
 ## 配置文件    
       /inc/config.py         
@@ -36,8 +37,9 @@ POC bomber 是一款漏洞检测工具，旨在利用大量高危害漏洞的POC
       
       
 ## Screenshots    
-![image](https://user-images.githubusercontent.com/71172892/143585798-9d7e505d-42f0-4b8f-ae0c-fd400466f2b5.png)
-![image](https://user-images.githubusercontent.com/71172892/143586027-5e54e484-edc7-4551-a536-4f005efa5048.png)      
+![image](https://user-images.githubusercontent.com/71172892/147401553-420a9b43-c6ef-40ce-aa88-de47243a9996.png)
+![image](https://user-images.githubusercontent.com/71172892/147401544-4f475540-9ef9-4ea9-9a1b-6629986d5025.png)
+![image](https://user-images.githubusercontent.com/71172892/147401536-df6e68fb-f686-4d27-a706-cdc617c6902e.png)    
 
 
 ## POC编写规则     

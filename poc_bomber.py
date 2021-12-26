@@ -14,8 +14,8 @@ def get_parser():
     p = parser.add_argument_group('POC-Bomber 的参数')
     p.add_argument("-u", "--url", type=str, help="测试单条url")
     p.add_argument("-f", "--file", type=str, help="测试多个url文件")
-    p.add_argument("-o", "--output", help="报告生成路径(默认不生成报告)")
-    p.add_argument("--dnslog", type=str, help="使用dnslog平台检测无回显漏洞")
+    p.add_argument("-o", "--output", type=str, help="报告生成路径(默认不生成报告)")
+    p.add_argument("--dnslog", action='store_true', help="使用dnslog平台检测无回显漏洞")
     args = parser.parse_args()
     return args
 
@@ -52,3 +52,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+

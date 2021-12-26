@@ -1,3 +1,4 @@
+2021.12.26  重写pocbomber的框架, 改用线程池，优化各项性能，速度现在非常快是以前的数倍，并采用参数运行程序，具体用法可见 python3 pocbomber.py
 2021.12.21  新增系统配置文件 dnslog.py 用来支持无回显rce的漏洞检测,支持dnslog和ceye平台     /inc/dnslog.py 
             新增POC 支持 apache log4j2 远程代码执行的漏洞检测(支持自动提交表单和fuzz参数，并能够检测X-Api-Version中的2次rce)    /pocs/middleware/apache/log4j2_rce.py
 2021.12.8   新增POC Apache HTTPD 换行解析漏洞(CVE-2017-15715)     /pocs/middleware/apache/CVE_2017_15715.py

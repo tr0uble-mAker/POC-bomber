@@ -12,7 +12,7 @@ POC bomber 是一款漏洞检测工具，旨在利用大量高危害漏洞的POC
 
 ## 配置文件    
       /inc/config.py         
-无回显漏洞检测默认使用 dnslog.cn 平台，如使用 ceye 请在配置文件配置相关参数
+无回显漏洞检测默认使用 dnslog.cn 平台且默认关闭, 要开启需前往配置文件将 dnslog_flag 开关置为True
 
 ## 目录结构:
        

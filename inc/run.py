@@ -5,32 +5,31 @@
 
 # 加载全局poc
 from inc.init import *
-from inc import config
-from inc.thread import *
+from inc import config, thread, output
+
+
+import time
 # 忽略https报错
 from urllib3.exceptions import InsecureRequestWarning
 from urllib3 import disable_warnings
 disable_warnings(InsecureRequestWarning)
 
 
-def run(url, threads_num=1, thread_timeout=config.thread_timeout):
-    report = []
-    threads = Threads(threads_num, thread_timeout)
-    pocmodel = get_pocmodel(url)
-    for poclist in pocmodel:
-        for poc in poclist:
-            if threads_num == 1:
-                relsult = eval(poc)
-                print('\n[+] 正在检测: ', str(relsult['name']))
-                if relsult['vulnerable']:
-                    report.append(relsult)
-                    print('\n[@] 检测到漏洞:', relsult['name'])
-            else:
-                threads.add_task(poc)
-    if threads_num > 1:
-        threads.start_thread()
-        report = threads.get_report()
-    return report
+def run(target_list, poc_list, output_path):
+    try:
+        thread_pool = thread.ThreadPool(config.max_thread)
+        for current_target in target_list:
+            [thread_pool.add_task(eval(poc_str), current_target) for poc_str in poc_list]         # 向线程池中添加所有poc和当前的url
+
+        futures = thread_pool.start_threadpool()
+        output.output(futures, output_path)
+        return True
+    except:
+        return False
+
+
+
+
 
 
 

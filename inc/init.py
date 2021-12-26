@@ -9,11 +9,12 @@ from pocs.middleware.main import *
 from pocs.ports.main import *
 from pocs.web.main import *
 
-def get_pocmodel(url):
-    pocmodel = []
-    pocmodel.append(framework(url))
-    pocmodel.append(middleware(url))
-    pocmodel.append(ports(url))
-    pocmodel.append(web(url))
+def get_poc_list():
+    poclist = []
+    poclist += framework()
+    poclist += middleware()
+    poclist += ports()
+    poclist += web()
 
-    return pocmodel
+    return poclist
+

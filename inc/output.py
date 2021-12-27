@@ -15,6 +15,8 @@ def output(futures, ouput_path=''):
         if relsult['vulnerable']:
             status_print('检测到: {0}  目标: {1} !'.format(relsult['name'], relsult['url']), 1)
             succeed_report.append(relsult)
+            if ouput_path != '':
+                data_save(ouput_path, relsult)
         else:
             status_print('正在检测: {0}'.format(relsult['name']), 0)
     status_print('所有检测任务完成, 即将生成报告......', 0)
@@ -27,13 +29,9 @@ def output(futures, ouput_path=''):
                     value = '[!] {0}: {1}'.format(str(r.capitalize()), str(relsult[r]))
                     status_print(value, 4)
                     first = False
-                    if ouput_path != '':
-                        data_save(ouput_path, value)
                 else:
                     value = '     {0}: {1}'.format(str(r.capitalize()), str(relsult[r]))
                     status_print(value, 4)
-                    if ouput_path != '':
-                        data_save(ouput_path, value)
         print('----')
         if ouput_path != '':
             status_print('已将报告写入至 {0} !'.format(os.path.join(os.path.abspath('.'), ouput_path)), 0)
@@ -43,10 +41,15 @@ def output(futures, ouput_path=''):
         status_print('所有测试已结束但是程序未生成任何报告', 3)
 
 
-def data_save(output_path, value):
+def data_save(output_path, relsult):
     report_file = open(output_path, 'a+')
+    value = ''
+    for r in relsult.keys():
+        if str(r) == 'name':
+            value += '[!] {0}: {1}\n'.format(str(r.capitalize()), relsult['name'])
+        else:
+            value += '     {0}: {1}\n'.format(str(r.capitalize()), relsult[r])
     report_file.write(value)
-    report_file.write('\n')
     report_file.close()
 
 
@@ -204,8 +207,3 @@ def status_print(value='', status=-1):        # 日志输出函数
         print(value)
     elif status == 4:                     # 加粗          status = 5
         printWhite(value)
-
-
-if __name__ == '__main__':
-    status_print('asasas', 0)
-    status_print('asas', 2)

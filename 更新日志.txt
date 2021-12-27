@@ -1,3 +1,7 @@
+2021.12.26  优化了pocbomber的框架
+            poc加载方式改版：只需要将写好的poc放到 /pocs 目录下即可被递归调用 
+            poc新改版规则：每个poc统一采用 verify 函数作为验证函数, attack 作为攻击函数(非必须), 方便进行统一调度, 文件名可以任意并且只须将写好的poc放到/pocs目录下即可，详情见poc编             写规则, 后续 attack 函数会逐渐增加
+            增加了颜色和样式, pocbomber更加美观
 2021.12.26  新增POC Apache HTTP Server 2.4.50 远程代码执行漏洞（CVE-2021-42013）    /pocs/middleware/apache/CVE_2021_42013.py
             重写pocbomber的框架, 改用线程池，优化各项性能，速度现在非常快是以前的数倍，并采用参数运行程序，具体用法可见 python3 pocbomber.py
 2021.12.21  新增系统配置文件 dnslog.py 用来支持无回显rce的漏洞检测,支持dnslog和ceye平台     /inc/dnslog.py 

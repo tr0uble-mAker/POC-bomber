@@ -49,12 +49,12 @@ POC bomber的poc编写简便灵活，没有严格的格式要求只要用python3
 1. 函数的返回结果以字典的形式返回并且具有name和vulnerable两个键值，name说明漏洞名称，vulnerable通过True和False的状态表明漏洞是否存在           
 2. 函数名为 verify                                 
   
-        def verify(url):          
-            relsult = {                   
-                'name': 'Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability',           
-                'vulnerable': False            
-            }  
-            try:
+        def verify(url):                        
+            relsult = {                                            
+                'name': 'Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability',                          
+                'vulnerable': False                          
+            }              
+            try:                    
                 ......        
                 (用任意方法检测漏洞)             
                 ......
@@ -71,14 +71,14 @@ POC bomber的poc编写简便灵活，没有严格的格式要求只要用python3
             execpt:
                 return relsult
 
-如果有exp可以编写 attack 函数, 该函数没有参数传入, 直接编写exp代码进行攻击, 编写完成后将该漏洞的verify函数返回字典中值attack置为True即可
-                def attack():
-                    try:
-                        ......
-                        攻击代码
-                        ......
-                    except:
-                        return
+如果有exp可以编写 attack 函数, 该函数没有参数传入, 直接编写exp代码进行攻击, 编写完成后将该漏洞的verify函数返回字典中值attack置为True即可                        
+  def attack():    
+    try:            
+          ......            
+          攻击代码             
+          ......    
+    except:               
+          return                    
 编写完成后的poc直接放入 /pocs 目录下任意位置即可被递归调用!    
 
 

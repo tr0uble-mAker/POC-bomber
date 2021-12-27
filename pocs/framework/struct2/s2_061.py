@@ -3,7 +3,7 @@ import urllib
 import urllib.parse as urlparse
 
 
-def s2_061(url):
+def verify(url):
     relsult = {
         'name': 'Struts2 S2-061 远程命令执行漏洞（CVE-2020-17530）',
         'vulnerable': False
@@ -25,5 +25,3 @@ def s2_061(url):
         return relsult
     except:
         return relsult
-if __name__ == '__main__':
-    print(s2_061('http://192.168.233.132:8080'))

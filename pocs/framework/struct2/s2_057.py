@@ -3,7 +3,7 @@ import re
 import urllib
 
 
-def s2_057(url):
+def verify(url):
     relsult = {
         'name': 'S2-057 远程代码执行漏洞',
         'vulnerable': False
@@ -24,7 +24,4 @@ def s2_057(url):
         return relsult
 
 
-if __name__ == '__main__':
-    url = input('url:')
-    print(s2_057(url))
 

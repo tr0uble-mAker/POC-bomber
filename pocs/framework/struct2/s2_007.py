@@ -3,7 +3,7 @@ import re
 import urllib
 
 
-def s2_007(url):
+def verify(url):
     relsult = {
         'name': 'S2-007 Remote Code Execution Vulnerablity',
         'vulnerable': False
@@ -47,7 +47,3 @@ def s2_007(url):
 
 
 
-
-if __name__ == '__main__':
-    url = 'http://192.168.54.203:8080/'
-    print(s2_007(url))

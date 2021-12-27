@@ -3,7 +3,7 @@ from urllib.parse import urlparse
 import socket
 import urllib,re
 
-def CNVD_2021_49104(url):
+def verify(url):
     relsult = {
         'name': 'CNVD-2021-49104——泛微E-Office文件上传漏洞',
         'vulnerable': False
@@ -54,6 +54,4 @@ Content-Type: image/jpeg
         return relsult
 
 
-if __name__ == '__main__':
-    url = input('url:')
-    print(CNVD_2021_49104(url))
+

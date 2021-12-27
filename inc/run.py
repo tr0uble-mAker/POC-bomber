@@ -15,11 +15,11 @@ from urllib3 import disable_warnings
 disable_warnings(InsecureRequestWarning)
 
 
-def run(target_list, poc_list, output_path):
+def verify(target_list, poc_modole_list, output_path):
     try:
         thread_pool = thread.ThreadPool(config.max_thread)
         for current_target in target_list:
-            [thread_pool.add_task(eval(poc_str), current_target) for poc_str in poc_list]         # 向线程池中添加所有poc和当前的url
+            [thread_pool.add_task(poc.verify, current_target) for poc in poc_modole_list]         # 向线程池中添加所有poc和当前的url
 
         futures = thread_pool.start_threadpool()
         output.output(futures, output_path)

@@ -70,7 +70,7 @@ def doOne(url):
         return True
     else:
         return False
-def CVE_2020_2551(url):
+def verify(url):
     relsult = {
         'name': 'CVE_2020_2551(weblogic)',
         'vulnerable': False

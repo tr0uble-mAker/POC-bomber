@@ -3,7 +3,7 @@ import re
 import urllib
 
 
-def seeyon_oa_a8_htmlofficeservlet_getshell(url):
+def verify(url):
     relsult = {
         'name': '致远 OA A8 htmlofficeservlet getshell 漏洞',
         'vulnerable': False

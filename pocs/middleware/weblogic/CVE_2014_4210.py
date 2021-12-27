@@ -40,7 +40,7 @@ def run(url,port):
     else:
         return False
 
-def CVE_2014_4210(url):
+def verify(url):
     relsult = {
         'name': 'CVE_2014_4210(weblogic)',
         'vulnerable': False
@@ -63,6 +63,4 @@ def CVE_2014_4210(url):
         return relsult
     except:
         return relsult
-if __name__=="__main__":
-    url = input('输入目标URL:')
-    print(CVE_2014_4210(url))
+

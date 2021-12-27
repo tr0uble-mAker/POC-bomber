@@ -21,14 +21,14 @@ def is_open(host, port):
     except:
         return False
 
-def redis_6379(url, port=6379):
+def verify(url):
     relsult = {
         'name': 'Redis 4.x/5.x 未授权访问漏洞',
         'vulnerable': False
     }
     oH = urlparse(url)
     a = oH.netloc.split(':')
-    # port = 6379        # redis默认端口是6379
+    port = 6379        # redis默认端口是6379
     host = a[0]
     if is_open(host, port) is False:  # 端口未开放直接退出
         return relsult
@@ -89,7 +89,7 @@ def start_jobs(data, num):
                 if url == None:
                     # 遇到结束标记
                     break
-                code, result = redis_6379(url)  # 验证漏洞
+                code, result = verify(url)  # 验证漏洞
                 if code:
                     print(result)  # 存在漏洞
             except:
@@ -118,5 +118,4 @@ def main():
 
 if __name__ == '__main__':
     host = input('host:')
-    port = input('port:')
-    print(redis_6379(host, int(port)))
+    print(verify(host))

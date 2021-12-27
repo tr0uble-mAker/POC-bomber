@@ -34,7 +34,7 @@ def get_form_pararm(url):       # 获取表单参数
         return form_list
 
 
-def log4j2_rce(url):
+def verify(url):
     relsult = {
         'name': 'Apache Log4j2 远程代码执行',
         'vulnerable': False
@@ -112,4 +112,4 @@ def log4j2_rce(url):
 
 if __name__ == '__main__':
     url = input('url:')
-    print(log4j2_rce(url))
+    print(verify(url))

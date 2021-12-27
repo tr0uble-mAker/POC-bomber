@@ -3573,7 +3573,7 @@ def run(rip,rport):
     else:
         return False
 
-def CVE_2019_2729(url):
+def verify(url):
     relsult = {
         'name': 'CVE_2019_2729(weblogic)',
         'vulnerable': False
@@ -3598,6 +3598,3 @@ def CVE_2019_2729(url):
         return relsult
 
 
-if __name__ == '__main__':
-    url = input('输入目标URL:')
-    print(CVE_2019_2729(url))

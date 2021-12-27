@@ -2,7 +2,7 @@ import urllib
 import requests
 
 
-def thinkphp_multi_sql_leak(url):
+def verify(url):
     relsult = {
         'name': 'thinkphp_multi_sql_leak',
         'vulnerable': False

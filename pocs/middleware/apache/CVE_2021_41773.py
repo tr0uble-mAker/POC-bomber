@@ -5,7 +5,7 @@ import urllib.request
 import ssl
 from colorama import init
 
-def CVE_2021_41773(url):
+def verify(url):
     relsult = {
         'name': 'Apache HTTP Server Arbitrary File Read(CVE-2021-41773)',
         'vulnerable': False
@@ -36,4 +36,4 @@ def CVE_2021_41773(url):
 
 if __name__ == '__main__':
     url = input('输入URL:')
-    print(CVE_2021_41773(url))
+    print(verify(url))

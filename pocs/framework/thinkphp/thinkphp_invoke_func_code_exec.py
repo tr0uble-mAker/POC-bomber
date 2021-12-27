@@ -3,7 +3,7 @@ import urllib
 import requests
 
 
-def thinkphp_invoke_func_code_exec(url):
+def verify(url):
     relsult = {
         'name': 'thinkphp_invoke_func_code_exec',
         'vulnerable': False

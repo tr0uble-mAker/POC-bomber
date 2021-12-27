@@ -15,7 +15,7 @@ def encode(cmd):
     return strs
 
 
-def e_cology_workflowservicexml_rce(url):
+def verify(url):
     relsult = {
         'name': '泛微 OA WorkflowServiceXml RCE',
         'vulnerable': False
@@ -59,6 +59,3 @@ def e_cology_workflowservicexml_rce(url):
         return relsult
 
 
-if __name__ == '__main__':
-    url = input('url:')
-    print(e_cology_workflowservicexml_rce(url))

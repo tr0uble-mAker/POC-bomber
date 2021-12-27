@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import urllib
 
 
-def CVE_2021_22205(url):
+def verify(url):
     relsult = {
         'name': 'CVE-2021-22205 GitLab 未授权RCE',
         'vulnerable': False

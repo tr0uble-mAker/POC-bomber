@@ -1,7 +1,7 @@
 import re, requests
 import urllib
 
-def sessyon_a6_sqli(url):
+def verify(url):
     relsult = {
         'name': '致远OA A6 sql注入漏洞',
         'vulnerable': False

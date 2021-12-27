@@ -8,7 +8,7 @@ import urllib3
 import urllib
 
 
-def e_cology_v8_sqli(url):
+def verify(url):
     relsult = {
         'name': '泛微OA V8前台Sql注入',
         'vulnerable': False
@@ -36,6 +36,3 @@ def e_cology_v8_sqli(url):
         return relsult
 
 
-if __name__ == "__main__":
-    url = input('url:')
-    print(e_cology_v8_sqli(url))

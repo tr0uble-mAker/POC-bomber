@@ -24,7 +24,7 @@ def get_ua():
                   )
     return ua
 
-def CVE_2021_21972(url):
+def verify(url):
     relsult = {
         'name': 'CVE-2021-21972 vSphere Client RCE',
         'vulnerable': False
@@ -59,5 +59,3 @@ def CVE_2021_21972(url):
 
 
 
-if __name__ == "__main__":
-    print(CVE_2021_21972('https://202.178.122.132'))

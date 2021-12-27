@@ -5,7 +5,7 @@ import time
 import socket
 from urllib.parse import urlparse
 
-def CVE_2021_42013(url):
+def verify(url):
     relsult = {
         'name': ' Apache HTTP Server 2.4.50 远程代码执行漏洞（CVE-2021-42013）',
         'vulnerable': False

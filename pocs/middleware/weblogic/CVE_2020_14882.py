@@ -4,7 +4,7 @@ import http.client
 http.client.HTTPConnection._http_vsn_str = 'HTTP/1.0'
 
 
-def CVE_2020_14882(url):
+def verify(url):
     relsult = {
         'name': 'Weblogic未授权远程命令执行漏洞(CVE-2020-14882&CVE-2020-14883)',
         'vulnerable': False
@@ -48,8 +48,5 @@ def CVE_2020_14882(url):
         return relsult
 
 
-if __name__ == '__main__':
-    url = input('url:')
-    print(CVE_2020_14882(url))
 
 

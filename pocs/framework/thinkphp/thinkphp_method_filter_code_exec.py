@@ -2,7 +2,7 @@ import urllib
 import requests
 
 
-def thinkphp_method_filter_code_exec(url):
+def verify(url):
     relsult = {
         'name': 'thinkphp_method_filter_code_exec',
         'vulnerable': False

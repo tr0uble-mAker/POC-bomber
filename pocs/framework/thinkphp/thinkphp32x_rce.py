@@ -4,7 +4,7 @@ import urllib
 from urllib.parse import urlparse
 from datetime import date, timedelta
 
-def thinkphp32x_rce(url):
+def verify(url):
     relsult = {
         'name': 'ThinkPHP3.2.x 远程代码执行',
         'vulnerable': False
@@ -49,4 +49,4 @@ Upgrade-Insecure-Requests: 1
 
 if __name__ == '__main__':
     url = input('url:')
-    print(thinkphp32x_rce(url))
+    print(verify(url))

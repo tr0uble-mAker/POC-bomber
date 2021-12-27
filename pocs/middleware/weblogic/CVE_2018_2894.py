@@ -47,7 +47,7 @@ def run(rip,rport):
         return True
     else:
         return False
-def CVE_2018_2894(url):
+def verify(url):
     relsult = {
         'name': 'CVE_2018_2894(weblogic)',
         'vulnerable': False
@@ -70,6 +70,4 @@ def CVE_2018_2894(url):
         return relsult
     except:
         return relsult
-if __name__=="__main__":
-    url = input('输入目标URL:')
-    print(CVE_2018_2894(url))
+

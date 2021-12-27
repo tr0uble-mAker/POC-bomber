@@ -3,7 +3,7 @@ import re
 import urllib
 
 
-def s2_045(url):
+def verify(url):
     relsult = {
         'name': 'S2-045 Remote Code Execution Vulnerablity（CVE-2017-5638）',
         'vulnerable': False
@@ -38,6 +38,3 @@ def exp(url):
             print(req.text)
 
 
-if __name__ == '__main__':
-    url = input('输入目标URL:')
-    exp(url)

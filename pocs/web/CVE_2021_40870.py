@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 import urllib
 
 
-def CVE_2021_40870(base_url):
+def verify(base_url):
     relsult = {
         'name': 'CVE-2021-40870 Aviatrix-Controller 远程代码执行',
         'vulnerable': False

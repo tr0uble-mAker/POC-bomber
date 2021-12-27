@@ -2,7 +2,7 @@ import requests
 import re
 import urllib
 
-def s2_012(url):
+def verify(url):
     relsult = {
         'name': 'S2-012 Remote Code Execution Vulnerability',
         'vulnerable': False
@@ -51,6 +51,3 @@ def s2_012(url):
     except:
         return relsult
 
-if __name__ == '__main__':
-    url = input('输入目标URL:')
-    print(s2_012(url))

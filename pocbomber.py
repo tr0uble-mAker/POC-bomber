@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-#############################
-#    Author tr0uble_mAker   #
-#############################
 # coding=utf-8
 
 from inc import run, init, output, config
@@ -9,7 +6,7 @@ import argparse, sys, time
 
 def get_parser():
     parser = argparse.ArgumentParser(usage='python3 pocbomber.py -u http://xxxx -o report.txt',
-                                     description='POC Bomber: 基于python3的poc验证框架',
+                                     description='POC bomber: 基于python3的poc/exp集成框架',
                                      )
     p = parser.add_argument_group('POC-Bomber 的参数')
     p.add_argument("-u", "--url", type=str, help="测试单条url")
@@ -38,15 +35,18 @@ def main():
         sys.exit()
 
     print('\n[*] starting {0}\n'.format(output.get_time1()))
-    poc_list = init.get_poc_list()
-    print('[{0}] [INFO] 检测到 {1} 个目标, 已加载 {2} 条POC'.format(output.get_time2(), len(target_list), len(poc_list)))
-    if run.run(target_list, poc_list, config.output_path):
+    poc_modole_list = init.get_poc_modole_list()
+    output.status_print('检测到 {0} 个目标, 已加载 {1} 条POC'.format(len(target_list), len(poc_modole_list)), 0)
+    if run.verify(target_list, poc_modole_list, config.output_path):
         print('\n[+] ending {0}\n'.format(output.get_time1()))
     else:
-        print('\n[-] ERROR! 程序异常终止!')
+        output.status_print('程序异常终止', 3)
         sys.exit()
 
 
 
 if __name__ == '__main__':
     main()
+
+
+

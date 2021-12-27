@@ -2,7 +2,7 @@ import requests
 import re
 import urllib
 
-def s2_001(url):
+def verify(url):
     relsult = {
         'name': 'S2-001 Remote Code Execution Vulnerability',
         'vulnerable': False
@@ -44,9 +44,6 @@ def s2_001(url):
         return relsult
 
 
-if __name__ == '__main__':
-    url = 'http://219.153.49.228:48852/index.jsp'
-    print(s2_001(url))
 
 
 

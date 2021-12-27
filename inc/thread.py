@@ -2,7 +2,7 @@ from inc.init import *
 import re, time, random, queue, requests
 import concurrent.futures
 
-
+# 线程池模块
 class ThreadPool():
     def __init__(self, max_thread):
         self.thread_pool = concurrent.futures.ThreadPoolExecutor(max_workers=max_thread)

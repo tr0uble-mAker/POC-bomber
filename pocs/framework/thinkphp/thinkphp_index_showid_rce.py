@@ -3,7 +3,7 @@ import datetime
 import requests
 
 
-def thinkphp_index_showid_rce(url):
+def verify(url):
     relsult = {
         'name': 'thinkphp_index_showid_rce',
         'vulnerable': False

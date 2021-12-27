@@ -2,7 +2,7 @@ import urllib
 import requests
 
 
-def thinkphp_view_recent_xff_sqli(url):
+def verify(url):
     relsult = {
         'name': 'thinkphp_view_recent_xff_sqli',
         'vulnerable': False

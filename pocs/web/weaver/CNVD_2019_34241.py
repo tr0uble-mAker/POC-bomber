@@ -14,7 +14,7 @@ headers = {
     'Content-Type': 'application/x-www-form-urlencoded'
 }
 
-def CNVD_2019_34241(url):
+def verify(url):
     relsult = {
         'name': '泛微OA WorkflowCenterTreeData接口注入(限oracle数据库)',
         'vulnerable': False
@@ -37,7 +37,3 @@ def CNVD_2019_34241(url):
     except:
         return relsult
 
-
-if __name__ == '__main__':
-    url = input('url:')
-    print(CNVD_2019_34241(url))

@@ -3,7 +3,7 @@ import re
 import urllib
 
 
-def s2_048(url):
+def verify(url):
     relsult = {
         'name': 'S2-048 Remote Code Execution Vulnerablity',
         'vulnerable': False
@@ -42,7 +42,3 @@ def exp(url):
             relsult = re.findall(regex, req.text)[0]
             print(relsult)
 
-
-if __name__ == '__main__':
-    url = input('输入目标URL:')
-    print(exp(url))

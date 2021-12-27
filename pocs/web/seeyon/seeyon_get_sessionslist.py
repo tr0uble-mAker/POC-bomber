@@ -2,7 +2,7 @@ import requests,re
 import urllib
 
 
-def sessyon_get_sessionslist(url):
+def verify(url):
     relsult = {
         'name': '致远OA Session泄漏漏洞(后台可getshell)',
         'vulnerable': False

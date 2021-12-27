@@ -2,7 +2,7 @@ import requests
 import urllib
 import re
 
-def CVE_2017_7501(url):
+def verify(url):
     relsult = {
         'name': 'Jboss反序列化漏洞 (CVE-2017-7501)',
         'vulnerable': False

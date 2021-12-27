@@ -1,7 +1,7 @@
 import requests, os, time
 from inc import config
 
-# 支持dnslog平台和ceye平台(要使用ceye平台在 /inc/config.py 配置api等参数)
+# 支持dnslog平台
 class Dnslog():                    # dnslog默认加载配置文件
     def __init__(self):
         self.dnslog_flag = config.dnslog_flag

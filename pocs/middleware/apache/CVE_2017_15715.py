@@ -4,7 +4,7 @@ import time, re
 
 
 #上传木马
-def CVE_2017_15715(url):
+def verify(url):
     relsult = {
         'name': 'Apache HTTPD 换行解析漏洞（CVE-2017-15715）',
         'vulnerable': False
@@ -48,5 +48,5 @@ testing.php
 
 if __name__ == '__main__':
     url = input('url:')
-    print(CVE_2017_15715(url))
+    print(verify(url))
 

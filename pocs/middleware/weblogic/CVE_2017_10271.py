@@ -75,7 +75,7 @@ def poc(u):
 def run(rip,rport):
     url=rip+':'+str(rport)
     return poc(url)
-def CVE_2017_10271(url):
+def verify(url):
     relsult = {
         'name': 'CVE_2017_10271(weblogic)',
         'vulnerable': False
@@ -98,6 +98,3 @@ def CVE_2017_10271(url):
         return relsult
     except:
         return relsult
-if __name__=="__main__":
-    url = input('输入目标URL:')
-    print(CVE_2017_10271(url))

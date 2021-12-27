@@ -6,7 +6,7 @@ import sys,re
 import urllib
 
 
-def CNVD_2019_32204(target):
+def verify(target):
     relsult = {
         'name': '泛微OA Bsh 远程代码执行漏洞 CNVD-2019-32204',
         'vulnerable': False
@@ -35,6 +35,3 @@ def CNVD_2019_32204(target):
         return relsult
 
 
-if __name__ == '__main__':
-    url = input('url:')
-    print(CNVD_2019_32204(url))

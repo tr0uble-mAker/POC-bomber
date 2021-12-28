@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # coding=utf-8
+  ############################
+ #   Author tr0uble_mAker   #
+###########################
 
 from inc import run, init, output, config
+from inc import console
 import argparse, sys, time
 
 def get_parser():
@@ -12,6 +16,8 @@ def get_parser():
     p.add_argument("-u", "--url", type=str, help="测试单条url")
     p.add_argument("-f", "--file", type=str, help="测试多个url文件")
     p.add_argument("-o", "--output", type=str, help="报告生成路径(默认不生成报告)")
+    p.add_argument("-p", "--poc", type=str, help='指定单个或多个poc进行检测, 直接传入poc文件名, 多个poc用(,)分开')
+    p.add_argument("-t", "--thread", type=int, help="指定线程池最大并发数量")
     p.add_argument("--dnslog", action='store_true', help="使用dnslog平台检测无回显漏洞")
     args = parser.parse_args()
     return args
@@ -20,29 +26,7 @@ def get_parser():
 def main():
     output.logo()
     args = get_parser()
-    target_list = []
-    if args.output:
-        config.output_path = args.output
-    if args.dnslog:
-        config.dnslog_flag = True
-    if args.url and args.file is None:
-        target_list.append(args.url)
-    elif args.file and args.url is None:
-        for target in open(args.file, 'r').readlines():
-            target_list.append(target)
-    else:
-        output.usage()
-        sys.exit()
-
-    print('\n[*] starting {0}\n'.format(output.get_time1()))
-    poc_modole_list = init.get_poc_modole_list()
-    output.status_print('检测到 {0} 个目标, 已加载 {1} 条POC'.format(len(target_list), len(poc_modole_list)), 0)
-    if run.verify(target_list, poc_modole_list, config.output_path):
-        print('\n[+] ending {0}\n'.format(output.get_time1()))
-    else:
-        output.status_print('程序异常终止', 3)
-        sys.exit()
-
+    console.pocbomber_console(args)
 
 
 if __name__ == '__main__':

@@ -84,17 +84,19 @@ POC bomber的poc编写简便灵活，没有严格的格式要求只要用python3
             execpt:
                 return relsult
 
-如果有exp可以编写 attack 函数,  只需要传入url, 直接编写exp代码进行攻击, 并在编写完成后将该漏洞的verify函数返回字典中attack值置为True    
-          
-                  
-                        def attack(url):    
-                          try:            
-                              ........................................            
-                                攻击代码(执行命令或反弹shell上传木马等)             
-                              ........................................
-                              return True
-                          except:               
-                              return False    
+如果有exp可以编写 attack 函数作为exp攻击函数，attack函数编写应该满足以下条件：
+1.参数接收目标url, 并在try中编写exp代码进行攻击, 可以与用户交互输入
+2.编写完成后将该漏洞的verify函数返回字典中attack值置为True    
+3.攻击成功后返回True，其他原因失败的话返回False即可          
+
+        def attack(url):    
+          try:            
+              ........................................            
+                攻击代码(执行命令或反弹shell上传木马等)             
+              ........................................
+              return True
+          except:               
+              return False    
                       
                       
 编写完成后的poc直接放入 /pocs 目录下任意位置即可被递归调用!    

@@ -46,7 +46,3 @@ Upgrade-Insecure-Requests: 1
     except:
         return relsult
 
-
-if __name__ == '__main__':
-    url = input('url:')
-    print(verify(url))

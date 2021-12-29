@@ -44,7 +44,6 @@ Content-Length: 51
             relsult['vulnerable'] = True
             relsult['url'] = url
             relsult['about'] = 'https://github.com/inbug-team/CVE-2021-41773_CVE-2021-42013'
-            relsult['exp'] = True
             return relsult
         else:
             return relsult
@@ -52,7 +51,3 @@ Content-Length: 51
         return relsult
 
 
-
-if __name__ == '__main__':
-    url = input('url:')
-    print(CVE_2021_42013(url))

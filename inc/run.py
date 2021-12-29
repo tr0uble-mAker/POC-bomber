@@ -28,6 +28,15 @@ def verify(target_list, poc_modole_list, output_path):
         return False
 
 
+def attack(target, poc_modole):
+    try:
+        if poc_modole.attack(target):
+            return True
+        else:
+            return False
+    except:
+        return False
+
 
 
 

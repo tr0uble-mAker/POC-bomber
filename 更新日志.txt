@@ -1,4 +1,5 @@
-2021.12.29  POC bomber v1.0.0 发布
+2021.12.29  增加了thinkphp2-5系列的exp
+            POC bomber v1.0.0 发布
 2021.12.26  优化了pocbomber的框架
             poc加载方式改版：只需要将写好的poc放到 /pocs 目录下即可被递归调用 
             poc新改版规则：每个poc统一采用 verify 函数作为验证函数, attack 作为攻击函数(非必须), 方便进行统一调度, 文件名可以任意并且只须将写好的poc放到/pocs目录下即可，详情见poc编             写规则, 后续 attack 函数会逐渐增加

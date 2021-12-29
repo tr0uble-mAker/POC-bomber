@@ -1,4 +1,5 @@
-2021.12.29  增加了thinkphp2-5系列的exp
+2021.12.29  新增POC Spring Boot 目录遍历 （CVE-2021-21234） /pocs/framework/CVE_2021_21234.py
+            增加了thinkphp2-5系列的exp
             POC bomber v1.0.0 发布
 2021.12.26  优化了pocbomber的框架
             poc加载方式改版：只需要将写好的poc放到 /pocs 目录下即可被递归调用 

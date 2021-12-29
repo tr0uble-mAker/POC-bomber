@@ -1,23 +1,26 @@
 # POC-bomber
 POC bomber 是一款漏洞检测工具，旨在利用大量高危害漏洞的POC快速获取目标服务器权限 
                                   
-本项目收集互联网各种危害性大的 RCE · 任意文件上传 · sql注入 等高危害且能够获取到服务器核心权限的漏洞POC，并集成在 POC bomber 武器库中，利用大量高危害POC对单个或多个目标进行模糊测试，以此快速获取目标服务器权限，适合在红蓝对抗或hvv中帮助红队快速找到突破口进入内网
+本项目收集互联网各种危害性大的 RCE · 任意文件上传 · sql注入 等高危害且能够获取到服务器核心权限的漏洞POC/EXP，并集成在 POC bomber 武器库中，利用大量高危害POC对单个或多个目标进行模糊测试，以此快速获取目标服务器权限，适合在红蓝对抗或hvv中帮助红队快速找到突破口进入内网
 
-支持weblogic，jboss，struct2，tp5，redis未授权访问，各大常见OA等易受攻击组件的漏洞检测，支持调用dnslog平台检测无回显的rce，支持单个目标检测和批量检测，POC bomber支持高并发线程池和自定义poc，并能够在当前目录生成漏洞报告，后续会增加exp攻击的功能
+POC bomber 的poc支持weblogic，jboss，struct2，tp5，redis未授权访问，各大常见OA等易受攻击组件的漏洞检测，支持调用dnslog平台检测无回显的rce(包括log4j2的检测)，支持单个目标检测和批量检测，程序框架采用高并发线程池和自定义poc/exp，并能够生成漏洞报告  
+POC bomber默认使用验证模式进行poc的验证, 可以加参数(--attack)进入攻击模式直接调用exp进行攻击(需要指定poc文件名)
 ## 安装
       git clone https://github.com/tr0uble-mAker/POC-bomber.git            
       cd POC-bomber
 ## 用法      
         模式:
-                单目标检测:  python3 pocbomber.py -u http://xxx.xxx.xx
-                批量检测:    python3 pocbomber.py -f url.txt -o report.txt 
-                指定poc检测: python3 pocbomber.py -f url.txt --poc="thinkphp2_rce.py"
+                单目标检测:     python3 pocbomber.py -u http://xxx.xxx.xx
+                批量检测:       python3 pocbomber.py -f url.txt -o report.txt 
+                指定poc检测:    python3 pocbomber.py -f url.txt --poc="thinkphp2_rce.py"
+                exp攻击模式:    python3 pocbomber.py -u 目标url --poc="指定poc文件" --attack
         参数:
                 -u  --url      目标url
                 -f  --file     指定目标url文件   
                 -o  --output   指定生成报告的文件(默认不生成报告)
                 -p  --poc      指定单个或多个poc进行检测, 直接传入poc文件名, 多个poc用(,)分开
                 -t  --thread   指定线程池最大并发数量(默认300)
+                --attack       使用poc文件中的exp进行攻击
                 --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中启用)
 
 ## 配置文件    
@@ -40,11 +43,15 @@ POC bomber 是一款漏洞检测工具，旨在利用大量高危害漏洞的POC
       
       
 ## Screenshots    
-![image](https://user-images.githubusercontent.com/71172892/147401553-420a9b43-c6ef-40ce-aa88-de47243a9996.png)
-![image](https://user-images.githubusercontent.com/71172892/147481683-ff5c4fbf-efd6-4232-a30d-32bc6c30bc14.png)
+#### 验证模式
+        python3 pocbomber.py -u http://xxx.xxx
 ![image](https://user-images.githubusercontent.com/71172892/147481630-f8b94566-572f-4d89-a874-dc01f5041377.png)
-#### 指定poc检测
-![image](https://user-images.githubusercontent.com/71172892/147545864-ac74e860-0554-4781-aa90-8770487bc954.png)
+#### 攻击模式
+        python3 pocbomber.py -u http://xxx.xxx --poc="thinkphp2_rce.py" --attack
+![image](https://user-images.githubusercontent.com/71172892/147629887-def9d18e-f6aa-466a-ab2c-2538752b82aa.png)
+![image](https://user-images.githubusercontent.com/71172892/147631168-6dd59220-503c-44cc-8f69-74c6afeefd59.png)
+
+
 
 
 

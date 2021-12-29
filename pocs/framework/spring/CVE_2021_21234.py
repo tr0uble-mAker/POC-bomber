@@ -17,7 +17,7 @@ def verify(url):
         if re.search('root:x:', rep1.text) and re.search('localhost', rep2.text):
             relsult['vulnerable'] = True
             relsult['url'] = url
-            relsult['verify'] = payload1
+            relsult['verify'] = vurl1
             relsult['about'] = 'https://blog.csdn.net/ML_Team/article/details/121032049'
             relsult['attack'] = True
             return relsult

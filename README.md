@@ -57,10 +57,12 @@ POC bomber默认使用验证模式进行poc的验证, 可以加参数(--attack)�
 
 ## POC编写规则     
 POC bomber支持自定义编写poc          
-POC bomber的poc编写简便灵活，没有严格的格式要求只要用python3以任意方法编写出可以验证漏洞的函数即可                        
-漏洞验证函数应该满足以下条件:                   
-1. 函数的返回结果以字典的形式返回并且具有name和vulnerable两个键值，name说明漏洞名称，vulnerable通过True和False的状态表明漏洞是否存在           
-2. 函数名为 verify                                 
+poc统一要求python3编写，具有verify和attack(非必须)两个函数分别进行验证和攻击,                     
+#### 漏洞验证函数(verify)编写应该满足以下条件:                   
+1. 函数名为 verify ， 参数接收目标url的参数           
+2. 函数的返回结果以字典的形式返回并且具有name和vulnerable两个键值，name说明漏洞名称，vulnerable通过True和False的状态表明漏洞是否存在
+3. 如果存在漏洞要将返回字典中vulnerable的值置为True, 并添加目标url, 漏洞利用相关网页等信息
+4. 用try方法尝试验证，使用request等发送数据包时要设置超时时间, 避免poc会卡死                              
   
         def verify(url):                        
             relsult = {                                            
@@ -84,11 +86,13 @@ POC bomber的poc编写简便灵活，没有严格的格式要求只要用python3
             execpt:
                 return relsult
 
-如果有exp可以编写 attack 函数作为exp攻击函数，attack函数编写应该满足以下条件：
-1.参数接收目标url, 并在try中编写exp代码进行攻击, 可以与用户交互输入
-2.编写完成后将该漏洞的verify函数返回字典中attack值置为True    
-3.攻击成功后返回True，其他原因失败的话返回False即可          
-
+如果有exp可以编写 attack 函数作为exp攻击函数，
+#### 漏洞攻击函数(attack)编写应该满足以下条件：
+1. 函数名为 attack ， 参数接收目标url的参数  
+2. 并在try中编写exp代码进行攻击, 可以与用户交互输入       
+3. 编写完成后将该漏洞的verify函数返回字典中attack值置为True 
+4. 攻击成功后返回True，其他原因失败的话返回False即可        
+      
         def attack(url):    
           try:            
               ........................................            

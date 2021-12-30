@@ -1,3 +1,4 @@
+2021.12.30  新增POC/EXP   Apache Druid任意文件读取漏洞(CVE-2021-36749)    /pocs/middleware/apache/CVE_2021_36749.py
 2021.12.29  新增POC/EXP   Spring Boot 目录遍历(CVE-2021-21234)   /pocs/framework/CVE_2021_21234.py
             增加了thinkphp2-5系列的exp
             POC bomber v1.0.0 发布

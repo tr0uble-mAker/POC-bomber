@@ -22,7 +22,6 @@ def verify(url):
             relsult['url'] = vulurl
             relsult['position'] = 'data'
             relsult['payload'] = payload
-            relsult['exp'] = True
         return relsult
     except:
         return relsult

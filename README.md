@@ -22,7 +22,8 @@ POC bomber默认使用验证模式进行poc的验证, 可以加参数(--attack)�
                 -t  --thread   指定线程池最大并发数量(默认300)
                 --attack       使用poc文件中的exp进行攻击
                 --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中启用)
-
+## 常见问题
+  shiro的反序列化漏洞检测依赖python3第三方库 pycryptodome 可以尝试先pip uninstall crypto pycryptodome ，再 pip install pycryptodome，不安装库的话默认检测不出shiro反序列化
 ## 配置文件    
       /inc/config.py         
 无回显漏洞检测默认使用 dnslog.cn 平台且默认关闭, 要开启需前往配置文件将 dnslog_flag 开关置为True
@@ -51,9 +52,6 @@ POC bomber默认使用验证模式进行poc的验证, 可以加参数(--attack)�
 ![image](https://user-images.githubusercontent.com/71172892/147629887-def9d18e-f6aa-466a-ab2c-2538752b82aa.png)
 ![image](https://user-images.githubusercontent.com/71172892/147631168-6dd59220-503c-44cc-8f69-74c6afeefd59.png)
 
-
-## 近期更新
-[2022/1/15][+] 新增shiro反序列化漏洞的检测，内置100key，要检测shiro需要安装python3第三方库 pycryptodome ，可以尝试pip install pycryptodome
 
 
 ## POC编写规则     

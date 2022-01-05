@@ -1,0 +1,1 @@
+pocs/framework/shiro/ysoserial-0.0.6-SNAPSHOT-all.jar filter=lfs diff=lfs merge=lfs -text

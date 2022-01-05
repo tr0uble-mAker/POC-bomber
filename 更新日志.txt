@@ -1,3 +1,4 @@
+2022.1.5    新增POC/EXP shiro反序列化的检测，内置100key，检测依赖python3第三方库 pycryptodome 
 2021.12.30  修复部分poc的bug
             新增POC/EXP   Apache Druid任意文件读取漏洞(CVE-2021-36749)    /pocs/middleware/apache/CVE_2021_36749.py
             新增 Apache HTTP Server 2.4.50 远程代码执行漏洞（CVE-2021-42013）的EXP

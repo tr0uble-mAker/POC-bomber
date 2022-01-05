@@ -27,8 +27,8 @@ POC bomber默认使用验证模式进行poc的验证, 可以加参数(--attack)�
       /inc/config.py   
       
 ## 常见问题
-1. shiro的反序列化漏洞检测依赖python3第三方库 pycryptodome 可以尝试先pip uninstall crypto pycryptodome ，再 pip install pycryptodome，不安装库的话默认检测不出shiro反序列
-2. log4j2命令执行漏洞的检测需要添加 --dnslog  参数 
+1. Shiro的反序列化漏洞的检测(/pocs/framework/shiro): 依赖python3第三方库 pycryptodome 可以尝试先pip uninstall crypto pycryptodome ，再 pip install pycryptodome，不安装库的话默认检测不出shiro反序列, 安装完库如果检测不成功或者出错请检查 /pocs/framework/shiro/ysoserial-0.0.6-SNAPSHOT-all.jar 是否完整的下载
+2. log4j2命令执行漏洞的检测：需要添加 --dnslog  参数 
 3. 无回显漏洞检测默认使用 dnslog.cn 平台且默认关闭, 要开启需前往配置文件将 dnslog_flag 开关置为True  
           
 

@@ -22,11 +22,25 @@ POC bomber默认使用验证模式进行poc的验证, 可以加参数(--attack)�
                 -t  --thread   指定线程池最大并发数量(默认300)
                 --attack       使用poc文件中的exp进行攻击
                 --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中启用)
-## 常见问题
-  shiro的反序列化漏洞检测依赖python3第三方库 pycryptodome 可以尝试先pip uninstall crypto pycryptodome ，再 pip install pycryptodome，不安装库的话默认检测不出shiro反序列化
+                
 ## 配置文件    
-      /inc/config.py         
-无回显漏洞检测默认使用 dnslog.cn 平台且默认关闭, 要开启需前往配置文件将 dnslog_flag 开关置为True
+      /inc/config.py   
+      
+## 常见问题
+  shiro的反序列化漏洞检测依赖python3第三方库 pycryptodome 可以尝试先pip uninstall crypto pycryptodome ，再 pip install pycryptodome，不安装库的话默认检测不出shiro反序列化  
+  log4j2命令执行漏洞的检测需要添加 --dnslog  参数
+  无回显漏洞检测默认使用 dnslog.cn 平台且默认关闭, 要开启需前往配置文件将 dnslog_flag 开关置为True                  
+
+## Screenshots    
+#### 验证模式
+        python3 pocbomber.py -u http://xxx.xxx
+![image](https://user-images.githubusercontent.com/71172892/147481630-f8b94566-572f-4d89-a874-dc01f5041377.png)
+#### 攻击模式
+        python3 pocbomber.py -u http://xxx.xxx --poc="thinkphp2_rce.py" --attack
+![image](https://user-images.githubusercontent.com/71172892/147629887-def9d18e-f6aa-466a-ab2c-2538752b82aa.png)
+![image](https://user-images.githubusercontent.com/71172892/147631168-6dd59220-503c-44cc-8f69-74c6afeefd59.png)
+
+
 
 ## 目录结构:
        
@@ -43,15 +57,6 @@ POC bomber默认使用验证模式进行poc的验证, 可以加参数(--attack)�
                                        \----- webs(存放常见web页面漏洞POC)
       
       
-## Screenshots    
-#### 验证模式
-        python3 pocbomber.py -u http://xxx.xxx
-![image](https://user-images.githubusercontent.com/71172892/147481630-f8b94566-572f-4d89-a874-dc01f5041377.png)
-#### 攻击模式
-        python3 pocbomber.py -u http://xxx.xxx --poc="thinkphp2_rce.py" --attack
-![image](https://user-images.githubusercontent.com/71172892/147629887-def9d18e-f6aa-466a-ab2c-2538752b82aa.png)
-![image](https://user-images.githubusercontent.com/71172892/147631168-6dd59220-503c-44cc-8f69-74c6afeefd59.png)
-
 
 
 ## POC编写规则     

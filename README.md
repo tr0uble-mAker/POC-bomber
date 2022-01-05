@@ -3,7 +3,7 @@ POC bomber 是一款漏洞检测工具，旨在利用大量高危害漏洞的POC
                                   
 本项目收集互联网各种危害性大的 RCE · 任意文件上传 · sql注入 等高危害且能够获取到服务器核心权限的漏洞POC/EXP，并集成在 POC bomber 武器库中，利用大量高危害POC对单个或多个目标进行模糊测试，以此快速获取目标服务器权限，适合在红蓝对抗或hvv中帮助红队快速找到突破口进入内网
 
-POC bomber 的poc支持weblogic，jboss，struct2，tp5，redis未授权访问，各大常见OA等易受攻击组件的漏洞检测，支持调用dnslog平台检测无回显的rce(包括log4j2的检测)，支持单个目标检测和批量检测，程序框架采用高并发线程池和自定义poc/exp，并能够生成漏洞报告  
+POC bomber 的poc支持weblogic，shiro，struct2，tp5，redis未授权访问，各大常见OA等易受攻击组件的漏洞检测，支持调用dnslog平台检测无回显的rce(包括log4j2的检测)，支持单个目标检测和批量检测，程序框架采用高并发线程池和自定义poc/exp，并能够生成漏洞报告  
 POC bomber默认使用验证模式进行poc的验证, 可以加参数(--attack)进入攻击模式直接调用exp进行攻击(需要指定poc文件名)
 ## 安装
       git clone https://github.com/tr0uble-mAker/POC-bomber.git            
@@ -52,7 +52,8 @@ POC bomber默认使用验证模式进行poc的验证, 可以加参数(--attack)�
 ![image](https://user-images.githubusercontent.com/71172892/147631168-6dd59220-503c-44cc-8f69-74c6afeefd59.png)
 
 
-
+## 近期更新
+[2022/1/15][+] 新增shiro反序列化漏洞的检测，内置100key，要检测shiro需要安装python3第三方库 pycryptodome ，可以尝试pip install pycryptodome
 
 
 ## POC编写规则     

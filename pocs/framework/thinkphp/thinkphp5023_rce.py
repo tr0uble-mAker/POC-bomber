@@ -17,7 +17,7 @@ def verify(url):
         }
         response = requests.post(target, data=payload, timeout=3, verify=False, headers=headers)
         response2 = requests.post(target, timeout=3, verify=False, headers=headers)
-        if re.search(r'PHP Version', response.text) and re.search(r'PHP Version', response2.text) is not True:
+        if re.search(r'PHP Version', response.text) and not re.search(r'PHP Version', response2.text):
             relsult['vulnerable'] = True
             relsult['method'] = 'POST'
             relsult['url'] = target
@@ -49,5 +49,3 @@ def attack(url):
             return True
     else:
         return False
-
-

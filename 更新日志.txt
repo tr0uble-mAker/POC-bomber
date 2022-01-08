@@ -1,3 +1,4 @@
+2022.1.8    修复POC误报
 2022.1.6    新增POC/EXP Tomcat PUT方法任意写文件漏洞(CVE-2017-12615)    /pocs/middleware/tomcat/CVE_2017_12615.py
 2022.1.5    新增POC/EXP shiro反序列化的回显检测，内置100key，检测依赖python3第三方库 pycryptodome   /pocs/framework/shiro/shiro_deserialization.py
 2021.12.30  修复部分poc的bug

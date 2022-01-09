@@ -12,10 +12,11 @@ POC bomber默认使用验证模式进行poc的验证, 可以加参数(--attack)�
         查看用法:     python3 pocbomber.py
         
         模式:
-                单目标检测:     python3 pocbomber.py -u http://xxx.xxx.xx
-                批量检测:       python3 pocbomber.py -f url.txt -o report.txt 
-                指定poc检测:    python3 pocbomber.py -f url.txt --poc="thinkphp2_rce.py"
-                exp攻击模式:    python3 pocbomber.py -u 目标url --poc="指定poc文件" --attack
+                获取poc/exp信息:   python3 pocbomber.py --show
+                单目标检测:        python3 pocbomber.py -u http://xxx.xxx.xx
+                批量检测:          python3 pocbomber.py -f url.txt -o report.txt 
+                指定poc检测:       python3 pocbomber.py -f url.txt --poc="thinkphp2_rce.py"
+                exp攻击模式:       python3 pocbomber.py -u 目标url --poc="指定poc文件" --attack
         参数:
                 -u  --url      目标url
                 -f  --file     指定目标url文件   

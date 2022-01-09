@@ -235,9 +235,9 @@ def show(poc_modole_list):
     for (name, path, attack) in poc_info_list:
         if 'Windows' in platform.system():
             if attack:
-                printDeepGreen('\n[+] Name: {0}         Attack: True\n'.format(name))
+                printGreen('\n[+] Name: {0}         Attack: True\n'.format(name))
             else:
-                printGreen('\n[+] Name: {0}\n'.format(name))
+                printDeepGreen('\n[+] Name: {0}\n'.format(name))
             print('    Script: {0}'.format(path.split('\\')[-1]))
             print('    Path: {0}'.format(path))
         else:

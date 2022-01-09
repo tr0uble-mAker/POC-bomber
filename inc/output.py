@@ -76,16 +76,18 @@ def logo():
 def usage():
     print('''
         用法:
-                单目标检测:      python3 pocbomber.py -u http://xxx.xxx.xx 
-                批量检测:        python3 pocbomber.py -f url.txt -o report.txt
-                指定poc检测:     python3 pocbomber.py -f url.txt --poc="thinkphp2_rce.py"
-                exp攻击模式:     python3 pocbomber.py -u 目标url --poc="指定poc文件" --attack
+                获取poc/exp信息:   python3 pocbomber.py --show
+                单目标检测:        python3 pocbomber.py -u http://xxx.xxx.xx 
+                批量检测:          python3 pocbomber.py -f url.txt -o report.txt
+                指定poc检测:       python3 pocbomber.py -f url.txt --poc="thinkphp2_rce.py"
+                exp攻击模式:       python3 pocbomber.py -u 目标url --poc="指定poc文件" --attack
         参数:
                 -u  --url      目标url
                 -f  --file     指定目标url文件   
                 -o  --output   指定生成报告的文件(默认不生成报告)
                 -p  --poc      指定单个或多个poc进行检测, 直接传入poc文件名, 多个poc用(,)分开
                 -t  --thread   指定线程池最大并发数量(默认300)
+                --show         展示poc/exp详细信息
                 --attack       使用poc文件中的exp进行攻击
                 --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中默认启用)''', end='')
 
@@ -246,4 +248,3 @@ def show(poc_modole_list):
             print('    Script: {0}'.format(path.split('/')[-1]))
             print('    Path: {0}'.format(path))
     print('''\n\t\t\t\t\t\t\t\t\t\tTotal     POC: {0}    EXP: {1}'''.format(len(poc_info_list), exp_num))
-

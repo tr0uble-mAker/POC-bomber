@@ -9,9 +9,6 @@ def pocbomber_console(args):
     attack = False
     poc_modole_list = init.get_poc_modole_list()
     target_list = []
-    if args.show:
-        output.show(poc_modole_list)
-        sys.exit()
     if args.output:                             # --output
         config.output_path = args.output
     if args.thread:                             # --thread
@@ -20,6 +17,9 @@ def pocbomber_console(args):
         config.dnslog_flag = True
     if args.poc:                                # --poc
         poc_modole_list = init.get_poc_modole_list_by_search(args.poc.split(','))
+    if args.show:
+        output.show(poc_modole_list)
+        sys.exit()
     if args.attack:
         attack = True
     if args.url and args.file is None:          # --url
@@ -44,7 +44,6 @@ def pocbomber_console(args):
         output.status_print('程序异常终止', 3)
         sys.exit()
     print('\n[+] ending {0}\n'.format(output.get_time1()))
-
 
 
 

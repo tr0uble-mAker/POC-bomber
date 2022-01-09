@@ -81,7 +81,8 @@ poc统一要求python3编写，具有verify和attack(非必须)两个函数分�
         def verify(url):                        
             relsult = {                                            
                 'name': 'Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability',                          
-                'vulnerable': False                          
+                'vulnerable': False，
+                'attack'： False，        # 如果有exp支持attack模式将attack的值置为True
             }              
             try:                    
                 ......        
@@ -91,7 +92,6 @@ poc统一要求python3编写，具有verify和attack(非必须)两个函数分�
                     relsult['vulnerable'] = True     # 将relsult的vulnerable的值置为True
                     relsult['url'] = url             # 返回验证的url
                     relust['xxxxx'] = 'xxxxx'        # 可以添加该漏洞相关来源等信息   
-                    relsult['attack'] = True         # 如果有exp返回attack的值为True
                     ......           
                     return relsult     # 将vulnerable值为True的relsult返回                   
                 else:  # 不存在漏洞           

@@ -1,4 +1,5 @@
-2022.1.9    新增POC/EXP PHP文件包含漏洞(利用phpinfo)               /pocs/framework/php/phpinfo_inclusion.py  
+2022.1.9    新增POC     nginx解析漏洞                /pocs/middleware/nginx/nginx_parsing_vulnerability.py
+            新增POC/EXP PHP文件包含漏洞(利用phpinfo)               /pocs/framework/php/phpinfo_inclusion.py  
                         PHP 8.1.0-dev 开发版本后门                 /pocs/framework/php/php_81_backdoor.py
                         PHP XDebug 远程调试代码执行漏洞(无回显)    /pocs/framework/php/php_xdebug_rce.py      
 2022.1.8    修复部分POC误报

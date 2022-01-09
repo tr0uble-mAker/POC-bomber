@@ -5,7 +5,8 @@ import urllib
 def verify(url):
     relsult = {
         'name': 'ThinkPHP5 5.0.23 Remote Code Execution Vulnerability',
-        'vulnerable': False
+        'vulnerable': False,
+        'attack': True,
     }
     try:
         target = url + '/index.php?s=captcha'

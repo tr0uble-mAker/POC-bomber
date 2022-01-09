@@ -67,7 +67,8 @@ def CBCCipher(key, file_body):
 def verify(url):
     relsult = {
         'name': 'Shiro 反序列化漏洞',
-        'vulnerable': False
+        'vulnerable': False,
+        'attack': True,
     }
     keys = [
         "kPH+bIxk5D2deZiIxcaaaA==",

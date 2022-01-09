@@ -7,7 +7,8 @@ import inc.dnslog
 def verify(url):
     relsult = {
         'name': 'PHP XDebug 远程调试代码执行漏洞(无回显)',
-        'vulnerable': False
+        'vulnerable': False,
+        'attack': True,
     }
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0',

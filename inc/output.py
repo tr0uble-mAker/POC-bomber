@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
-import random, time, os
+import random, time, os, sys
 
 def get_time1():
     return time.strftime("@ %Y-%m-%d /%H:%M:%S/", time.localtime())
@@ -211,7 +211,39 @@ def status_print(value='', status=-1):        # 日志输出函数
     elif status == 4:                     # 加粗          status = 5
         printWhite(value)
 
+def show(poc_modole_list):
+    poc_info_list = []
+    exp_num = 0
+    status_print('loading POC/EXP ......', 0)
+    for poc_modole in poc_modole_list:
+        path = poc_modole.__file__
+        try:
+            relsult = poc_modole.verify('http://0.0.0.0')
+            name = relsult['name']
+        except:
+            continue
+        try:
+            attack = relsult['attack']
+            exp_num += 1
+        except:
+            attack = False
+        poc_info = (name, path, attack)
+        poc_info_list.append(poc_info)
 
-if __name__ == '__main__':
-    status_print('asasas', 0)
-    status_print('asas', 2)
+    for (name, path, attack) in poc_info_list:
+        if 'Windows' in platform.system():
+            if attack:
+                printDeepGreen('\n[+] Name: {0}         Attack: True\n'.format(name))
+            else:
+                printGreen('\n[+] Name: {0}\n'.format(name))
+            print('    Script: {0}'.format(path.split('\\')[-1]))
+            print('    Path: {0}'.format(path))
+        else:
+            if attack:
+                print('\n{0}\n'.format(GREEN.format('[+] Name: {0}         Attack: True'.format(name))), end='')
+            else:
+                print('\n{0}\n'.format(DEEP_GREEN.format('[+] Name: {0}'.format(name))), end='')
+            print('    Script: {0}'.format(path.split('/')[-1]))
+            print('    Path: {0}'.format(path))
+    print('''\n\t\t\t\t\t\t\t\t\t\tTotal     POC: {0}    EXP: {1}'''.format(len(poc_info_list), exp_num))
+

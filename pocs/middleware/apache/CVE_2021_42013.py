@@ -9,7 +9,8 @@ from urllib.parse import urlparse
 def verify(url):
     relsult = {
         'name': ' Apache HTTP Server 2.4.50 远程代码执行漏洞（CVE-2021-42013）',
-        'vulnerable': False
+        'vulnerable': False,
+        'attack': True,
     }
 
     cmd = 'echo 9304c2d1af7a21f56830c7ba773a93e2 | base64'

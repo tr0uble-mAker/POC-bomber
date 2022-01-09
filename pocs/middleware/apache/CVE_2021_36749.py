@@ -5,6 +5,7 @@ def verify(url):
     relsult = {
         'name': 'Apache Druid任意文件读取漏洞(CVE-2021-36749)',
         'vulnerable': False,
+        'attack': True,
     }
     vurl = urllib.parse.urljoin(url, '/druid/indexer/v1/sampler?for=connect')
     headers = {

@@ -5,7 +5,8 @@ import urllib
 def verify(url):
     relsult = {
         'name': 'PHP 8.1.0-dev 开发版本后门',
-        'vulnerable': False
+        'vulnerable': False,
+        'attack': True,
     }
     headers = {
         'Accept-Encoding': 'gzip, deflate',

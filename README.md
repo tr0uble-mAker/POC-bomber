@@ -41,10 +41,14 @@ POC bomber默认使用验证模式进行poc的验证, 可以加参数(--attack)�
         python3 pocbomber.py -u http://xxx.xxx
 ![image](https://user-images.githubusercontent.com/71172892/148207306-da5f62d4-4f40-4339-9e18-e1565158d79c.png)
 ![image](https://user-images.githubusercontent.com/71172892/147481630-f8b94566-572f-4d89-a874-dc01f5041377.png)
+![verify模式演示](https://user-images.githubusercontent.com/71172892/148684107-af9853ae-08d7-40e0-9d82-2987a0f8c066.gif)
+
 #### 攻击模式
         python3 pocbomber.py -u http://xxx.xxx --poc="thinkphp2_rce.py" --attack
 ![image](https://user-images.githubusercontent.com/71172892/147629887-def9d18e-f6aa-466a-ab2c-2538752b82aa.png)
 ![image](https://user-images.githubusercontent.com/71172892/148206720-86f77246-301c-481f-a16c-b36047f72d7c.png)
+![attack模式演示](https://user-images.githubusercontent.com/71172892/148684097-67b59320-6758-458d-ac6b-ae219c327924.gif)
+
 
 
 

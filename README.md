@@ -7,7 +7,8 @@ POC bomber 的poc支持weblogic，tomcat，apache，jboss，nginx，struct2，tp
 POC bomber默认使用验证模式进行poc的验证，如果在返回结果中看到attack的值为True，可以加参数(--attack)进入攻击模式直接调用exp进行攻击(需要指定poc文件名)，达到一键getshell
 ## 安装
       git clone https://github.com/tr0uble-mAker/POC-bomber.git            
-      cd POC-bomber   
+      cd POC-bomber
+      pip install -r requirements.txt
 ## 用法      
         查看用法:     python3 pocbomber.py
         

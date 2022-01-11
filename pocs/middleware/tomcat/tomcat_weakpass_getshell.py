@@ -6,7 +6,7 @@ def verify(url):
     relsult = {
         'name': 'Tomcat 弱口令(上传war包getshell)',
         'vulnerable': False,
-        'attack': False,
+        'attack': True,
     }
     tomcat_users = ['tomcat', 'admin']
     tomcat_passwds = ['tomcat', 'admin', '123456', '']

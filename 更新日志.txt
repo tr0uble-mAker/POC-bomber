@@ -1,4 +1,5 @@
-2021.1.14   修复由于poc编写错误可能引起的程序中断的问题
+2021.1.14   新增POC/EXP CVE-2021-3129-Laravel Debug mode 远程代码执行漏洞         /pocs/framework/laravel/CVE_2021_3129.py
+            修复由于poc编写错误可能引起的程序中断的问题
             修复部分POC误报
 2020.1.11   新增POC/EXP spring 代码执行(CVE-2018-1273)          /pocs/framework/spring/CVE_2018_1273.py
                         Tomcat 弱口令(上传war包getshell)        /pocs/middleware/tomcat/tomcat_weakpass_getshell.py

@@ -11,14 +11,18 @@ def get_time2():
 def output(futures, ouput_path=''):
     succeed_report = []
     for future in futures:
-        relsult = future.result()
-        if relsult['vulnerable']:
-            status_print('检测到: {0}  目标: {1} !'.format(relsult['name'], relsult['url']), 1)
-            succeed_report.append(relsult)
-            if ouput_path != '':
-                data_save(ouput_path, relsult)
-        else:
-            status_print('正在检测: {0}'.format(relsult['name']), 0)
+        try:
+            relsult = future.result()
+            if relsult['vulnerable']:
+                status_print('检测到: {0}  目标: {1} !'.format(relsult['name'], relsult['url']), 1)
+                succeed_report.append(relsult)
+                if ouput_path != '':
+                    data_save(ouput_path, relsult)
+            else:
+                status_print('正在检测: {0}'.format(relsult['name']), 0)
+        except:
+            status_print('poc中产生一个错误', 2)
+            pass
     status_print('所有检测任务完成, 即将生成报告......', 0)
     if len(succeed_report) != 0:
         print('----')
@@ -66,7 +70,7 @@ def logo():
 
     
     
-                                                Version 2.00
+                                                Version 1.00
                                                             Author  tr0uble_mAker
                                                             Whoami  https://github.com/tr0uble-mAker
 '''

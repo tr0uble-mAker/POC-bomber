@@ -1,10 +1,11 @@
-2021.1.17   新增POC/EXP Jenkins远程命令执行漏洞(CVE-2018-1000861)                 /pocs/web/jenkins/CVE_2018_1000861.py
-2021.1.14   新增POC/EXP CVE-2021-3129-Laravel Debug mode 远程代码执行漏洞         /pocs/framework/laravel/CVE_2021_3129.py
+2022.1.19   新增POC/EXP Flask-ssti 代码执行漏洞 			/pocs/framework/flask/flask_ssti.py
+2022.1.17   新增POC/EXP Jenkins远程命令执行漏洞(CVE-2018-1000861)                 /pocs/web/jenkins/CVE_2018_1000861.py
+2022.1.14   新增POC/EXP CVE-2021-3129-Laravel Debug mode 远程代码执行漏洞         /pocs/framework/laravel/CVE_2021_3129.py
             修复由于poc编写错误可能引起的程序中断的问题
             修复部分POC误报
-2020.1.11   新增POC/EXP spring 代码执行(CVE-2018-1273)          /pocs/framework/spring/CVE_2018_1273.py
+2022.1.11   新增POC/EXP spring 代码执行(CVE-2018-1273)          /pocs/framework/spring/CVE_2018_1273.py
                         Tomcat 弱口令(上传war包getshell)        /pocs/middleware/tomcat/tomcat_weakpass_getshell.py
-2020.1.10   新增POC/EXP 通达OA 任意用户登录漏洞       /pocs/web/tongda/tongda_oa_fake_user.py
+2022.1.10   新增POC/EXP 通达OA 任意用户登录漏洞       /pocs/web/tongda/tongda_oa_fake_user.py
 2022.1.9    新增POC     nginx解析漏洞                /pocs/middleware/nginx/nginx_parsing_vulnerability.py
             新增POC/EXP PHP文件包含漏洞(利用phpinfo)               /pocs/framework/php/phpinfo_inclusion.py  
                         PHP 8.1.0-dev 开发版本后门                 /pocs/framework/php/php_81_backdoor.py

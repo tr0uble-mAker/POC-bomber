@@ -18,7 +18,6 @@ def verify(url):
         }
         vurl = urllib.parse.urljoin(url, payload)
         req = requests.get(vurl, headers=headers, timeout=3)
-        print(req.text)
         if re.search(cmd, req.text) and req.status_code == 200 and re.search('pcpu', req.text) and re.search('pmem', req.text):
             relsult['vulnerable'] = True
             relsult['method'] = 'GET'

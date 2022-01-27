@@ -1,3 +1,4 @@
+2022.1.27   新增POC/EXP Node.js目录穿越漏洞(CVE-2017-14849)                    /pocs/framework/nodejs/CVE_2017_14849.py
 2022.1.22   新增POC/EXP Node.js命令注入漏洞(CVE-2021-21315)                     /pocs/framework/nodejs/CVE_2021_21315.py
 2022.1.19   新增POC/EXP Flask-ssti 代码执行漏洞 			/pocs/framework/flask/flask_ssti.py
 2022.1.17   新增POC/EXP Jenkins远程命令执行漏洞(CVE-2018-1000861)                 /pocs/web/jenkins/CVE_2018_1000861.py

@@ -8,7 +8,7 @@ def verify(url):
     relsult = {
         'name': 'Spring Cloud Gateway Actuator API SpEL 代码注入 (CVE-2022-22947)',
         'vulnerable': False,
-        'attack': True,
+        'attack': False,
     }
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0',

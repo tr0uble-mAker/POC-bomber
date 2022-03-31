@@ -1,4 +1,4 @@
-2022.3.31   新增POC     Spring Framework 远程命令执行漏洞(2022.3)               /pocs/framkework/ports/spring_core_rce.py
+2022.3.31   新增POC/EXP Spring Framework 远程命令执行漏洞(2022.3)               /pocs/framkework/ports/spring_core_rce.py
 2022.3.7    新增POC     Spring Cloud Gateway Actuator API SpEL 代码注入 (CVE-2022-22947)     /pocs/framkework/ports/CVE_2022_22947.py
                         向日葵 11.0.0.33162 远程命令执行(CNVD-2022-10270)        /pocs/framework/ports/sunlogin_rce.py
 2022.1.27   新增POC/EXP Node.js 目录穿越漏洞(CVE-2017-14849)                    /pocs/framework/nodejs/CVE_2017_14849.py

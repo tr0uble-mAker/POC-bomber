@@ -70,7 +70,7 @@ def logo():
 
     
     
-                                                Version 1.00
+                                                Version 2.01
                                                             Author  tr0uble_mAker
                                                             Whoami  https://github.com/tr0uble-mAker
 '''

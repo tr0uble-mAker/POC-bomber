@@ -1,4 +1,4 @@
-2022.4.18   新增POC     Zookeeper未授权访问                                      /pocs/ports/zookeeper_unauthorized.py
+2022.4.18   新增POC     Zookeeper未授权访问                                     /pocs/ports/zookeeper_unauthorized.py
 2022.4.1    修复POC/EXP Spring Framework 远程命令执行漏洞(CVE-2022-22965)           /pocs/framkework/spring/spring_core_rce.py
 2022.3.31   新增POC/EXP Spring Framework 远程命令执行漏洞(2022.3)               /pocs/framkework/spring/spring_core_rce.py
 2022.3.7    新增POC     Spring Cloud Gateway Actuator API SpEL 代码注入 (CVE-2022-22947)     /pocs/framkework/spring/CVE_2022_22947.py

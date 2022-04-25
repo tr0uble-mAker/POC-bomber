@@ -14,6 +14,7 @@ def weblogic_fingerprint(url):          # weblogic版本指纹
         port = 443
     host = a[0]
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.settimeout(3)
     server_address = (str(host), int(port))
     sock.connect(server_address)
     sock.send(bytes.fromhex('74332031322e322e310a41533a3235350a484c3a31390a4d533a31303030303030300a0a'))

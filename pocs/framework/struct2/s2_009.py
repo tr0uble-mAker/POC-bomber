@@ -15,7 +15,7 @@ def verify(url):
     vulurl2 = urllib.parse.urljoin(url, payload2)
     try:
         req = requests.get(vulurl, timeout=3)
-        req2 = requests.get(vulurl, timeout=3)
+        req2 = requests.get(vulurl2, timeout=3)
         if re.search(hash_flag, req.text):
             if re.search(hash_flag, req2.text) and len(req2.text) < len(req.text):
                 pass

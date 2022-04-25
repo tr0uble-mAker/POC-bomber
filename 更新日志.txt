@@ -1,4 +1,5 @@
-2022.4.25   修复POC     Weblogic系列指纹识别时导致程序卡死的问题                /pocs/middleware/weblogic/
+2022.4.25   更新版本    v2.0.2-POC-bomber
+            修复POC     Weblogic系列指纹识别时导致程序卡死的问题                /pocs/middleware/weblogic/
                         S2-009.py 的编写错误                                    /pocs/framework/struct2/s2_009.py
 2022.4.18   新增POC     Zookeeper未授权访问                                     /pocs/ports/zookeeper_unauthorized.py
 2022.4.1    修复POC/EXP Spring Framework 远程命令执行漏洞(CVE-2022-22965)           /pocs/framkework/spring/spring_core_rce.py

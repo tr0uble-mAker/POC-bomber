@@ -1,3 +1,4 @@
+2022.5.13   更新POC     CVE-2018-7422 WordPress Site Editor < 1.1.1 Local File Inclusion(LFI)      /pocs/web/wordpress/CVE_2018_7422.py
 2022.4.25   更新版本    v2.0.2-POC-bomber
             修复POC     Weblogic系列指纹识别时导致程序卡死的问题                /pocs/middleware/weblogic/
                         S2-009.py 的编写错误                                    /pocs/framework/struct2/s2_009.py

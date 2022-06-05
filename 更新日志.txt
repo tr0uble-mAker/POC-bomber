@@ -1,3 +1,4 @@
+2022.6.5    新增POC/EXP Atlassian Confluence 远程代码执行(CVE-2022-26134)                /pocs/web/atlassian/CVE_2022_26134.py    
 2022.5.17   新增POC/EXP CVE-2022-1388 F5-BIGIP iControl REST绕过授权访问漏洞                /pocs/web/f5/CVE_2022_1388.py
 2022.5.13   新增POC     CVE-2018-7422 WordPress Site Editor < 1.1.1 Local File Inclusion(LFI)      /pocs/web/wordpress/CVE_2018_7422.py
 2022.4.25   更新版本    v2.0.2-POC-bomber

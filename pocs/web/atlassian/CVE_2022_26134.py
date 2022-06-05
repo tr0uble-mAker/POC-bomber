@@ -28,10 +28,10 @@ def verify(url):
                 version = filter_version[0].split("'>")[1].split('</')[0]
             rep2 = requests.get(vurl2, headers=headers, verify=False, allow_redirects=False, timeout=3)
             if rep2.status_code == 302:
-                relsult['vulnerable'] = True
                 relsult['version'] = version
                 relsult['cmd'] = cmd
                 relsult['verify'] = rep2.headers['X-Cmd-Response']
+                relsult['vulnerable'] = True
             return relsult
         else:
             return relsult

@@ -27,7 +27,6 @@ def verify(url):
             if len(filter_version) >= 1:
                 version = filter_version[0].split("'>")[1].split('</')[0]
             rep2 = requests.get(vurl2, headers=headers, verify=False, allow_redirects=False, timeout=3)
-            print(rep2.status_code)
             if rep2.status_code == 302:
                 relsult['vulnerable'] = True
                 relsult['version'] = version

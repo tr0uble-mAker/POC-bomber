@@ -90,7 +90,7 @@ def usage():
                 -f  --file     指定目标url文件   
                 -o  --output   指定生成报告的文件(默认不生成报告)
                 -p  --poc      指定单个或多个poc进行检测, 直接传入poc文件名, 多个poc用(,)分开
-                -t  --thread   指定线程池最大并发数量(默认300)
+                -t  --thread   指定线程池最大并发数量(默认30)
                 --show         展示poc/exp详细信息
                 --attack       使用poc文件中的exp进行攻击
                 --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中默认启用)''', end='')

@@ -1,3 +1,4 @@
+2022.7.5    修复POC     CVE_2020_14882.py, CVE_2021_21972.py
 2022.6.21   新增POC     jolokia logback JNDI RCE                              /pocs/framework/spring/jolokia_logback_jndi_rce.py
                         jolokia Realm JNDI RCE                               /pocs/framework/spring/jolokia_realm_jndi_rce.py
 2022.6.5    新增POC/EXP Atlassian Confluence 远程代码执行(CVE-2022-26134)                /pocs/web/atlassian/CVE_2022_26134.py    

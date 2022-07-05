@@ -1,13 +1,7 @@
 import random
 import requests
-import http.client
 import urllib3,urllib
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-http.client.HTTPConnection._http_vsn = 10
-http.client.HTTPConnection._http_vsn_str = 'HTTP/1.0'
-
-TARGET_URI = "/ui/vropspluginui/rest/services/uploadova"
 
 def get_ua():
     first_num = random.randint(55, 62)
@@ -29,21 +23,15 @@ def verify(url):
         'name': 'CVE-2021-21972 vSphere Client RCE',
         'vulnerable': False
     }
-    proxies = {"scoks5": "http://127.0.0.1:1081"}
     headers = {
         'User-Agent': get_ua(),
         "Content-Type": "application/x-www-form-urlencoded"
     }
     payload = '/ui/vropspluginui/rest/services/uploadova'
+
     targetUrl = urllib.parse.urljoin(url, payload)
     try:
-        res = requests.get(targetUrl,
-                            headers=headers,
-                            timeout=10,
-                            verify=False,
-                            proxies=proxies)
-                            # proxies={'socks5': 'http://127.0.0.1:1081'})
-        # print(len(res.text))
+        res = requests.get(targetUrl,headers=headers,timeout=3, verify=False)
         if res.status_code == 405:
             relsult['vulnerable'] = True
             relsult['url'] = url
@@ -56,6 +44,4 @@ def verify(url):
     #     print(e)
     except:
         return relsult
-
-
 

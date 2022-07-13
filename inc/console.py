@@ -26,7 +26,7 @@ def pocbomber_console(args):
         target_list.append(args.url)
     elif args.file and args.url is None:        # --file
         for target in open(args.file, 'r').readlines():
-            target_list.append(target)
+            target_list.append(target.replace('\n', ''))
     else:
         output.usage()
         sys.exit()
@@ -42,7 +42,7 @@ def pocbomber_console(args):
                 output.status_print('ATTACK FAIL! What\'s wrong?', 3)
     else:
         output.status_print('程序异常终止', 3)
-        sys.exit()
+        sys.exit(0)
     print('\n[+] ending {0}\n'.format(output.get_time1()))
 
 

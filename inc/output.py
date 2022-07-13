@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
+
+VERSION = '2.03'
+
 import random, time, os, sys
 
 def get_time1():
@@ -8,18 +11,19 @@ def get_time1():
 def get_time2():
     return time.strftime("%H:%M:%S", time.localtime())
 
-def output(futures, ouput_path=''):
+def output(thread_pool, futures, ouput_path=''):
     succeed_report = []
     for future in futures:
         try:
+            current_target = thread_pool.futures[future]
             relsult = future.result()
             if relsult['vulnerable']:
-                status_print('检测到: {0}  目标: {1} !'.format(relsult['name'], relsult['url']), 1)
+                status_print('检测到: {0}  目标: {1} !'.format(relsult['name'], current_target), 1)
                 succeed_report.append(relsult)
                 if ouput_path != '':
                     data_save(ouput_path, relsult)
             else:
-                status_print('正在检测: {0}'.format(relsult['name']), 0)
+                status_print('正在检测: [{0}]  poc: {1}'.format(current_target, relsult['name']), 0)
         except:
             status_print('poc中产生一个错误', 2)
             pass
@@ -70,11 +74,11 @@ def logo():
 
     
     
-                                                Version 2.02
+                                                Version {0}
                                                             Author  tr0uble_mAker
                                                             Whoami  https://github.com/tr0uble-mAker
 '''
-    print(logo0)
+    print(logo0.format(VERSION))
 
 
 def usage():
@@ -90,7 +94,7 @@ def usage():
                 -f  --file     指定目标url文件   
                 -o  --output   指定生成报告的文件(默认不生成报告)
                 -p  --poc      指定单个或多个poc进行检测, 直接传入poc文件名, 多个poc用(,)分开
-                -t  --thread   指定线程池最大并发数量(默认30)
+                -t  --thread   指定线程池最大并发数量(默认300)
                 --show         展示poc/exp详细信息
                 --attack       使用poc文件中的exp进行攻击
                 --dnslog       使用dnslog平台检测无回显漏洞(默认不启用dnslog,可在配置文件中默认启用)''', end='')

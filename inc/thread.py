@@ -20,7 +20,7 @@ class ThreadPool():
             current_target = current_task[1]
             future = self.thread_pool.submit(current_poc, current_target)
             self.futures[future] = current_target
-        self.futures = concurrent.futures.as_completed(self.futures)
-        return self.futures
+        return concurrent.futures.as_completed(self.futures)
+
 
 

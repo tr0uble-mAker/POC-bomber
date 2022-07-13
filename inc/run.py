@@ -22,7 +22,7 @@ def verify(target_list, poc_modole_list, output_path):
             [thread_pool.add_task(poc.verify, current_target) for poc in poc_modole_list]         # 向线程池中添加所有poc和当前的url
 
         futures = thread_pool.start_threadpool()
-        output.output(futures, output_path)
+        output.output(thread_pool, futures, output_path)
         return True
     except:
         return False

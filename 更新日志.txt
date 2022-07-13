@@ -1,3 +1,5 @@
+2022.7.13   版本更新 v2.0.3 ，界面优化，显示current target和current poc
+            新增POC     Weaver-E-Cology-getSqlData-sqli                              /pocs/web/weaver/weaver_ecology_getsqldata_sqli.py
 2022.7.6    修复POC     删除以前shiro依赖jar的poc，将Shiro反序列化的检测更改为检测shiro默认key，实战中大多经常是默认key，大幅度提高了程序效率和准确率，不再依赖python的第三方库pycryptodome                                     /pocs/framework/shiro/shiro_defaultkey.py
             新增POC     H3C IMC dynamiccontent.properties.xhtm 远程命令执行         /pocs/web/h3c/h3c_imc_rce.py
 2022.7.5    修复POC     CVE_2020_14882.py, CVE_2021_21972.py

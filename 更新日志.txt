@@ -1,3 +1,4 @@
+2022.7.16   新增POC/EXP VMware Workspace ONE Access SSTI 漏洞(CVE-2022-22954)                  /pocs/web/vmware/CVE_2022_22954.py
 2022.7.13   版本更新 v2.0.3 ，界面优化，显示current target和current poc
             新增POC     Weaver-E-Cology-getSqlData-sqli                              /pocs/web/weaver/weaver_ecology_getsqldata_sqli.py
 2022.7.6    修复POC     删除以前shiro依赖jar的poc，将Shiro反序列化的检测更改为检测shiro默认key，实战中大多经常是默认key，大幅度提高了程序效率和准确率，不再依赖python的第三方库pycryptodome                                     /pocs/framework/shiro/shiro_defaultkey.py

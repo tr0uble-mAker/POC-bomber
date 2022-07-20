@@ -1,3 +1,4 @@
+2022.7.21   新增POC     致远OA Session泄露(thirdpartyController.do)                           /pocs/web/seeyon/seeyon_thirdpartycontroller_getshell.py
 2022.7.16   新增POC/EXP VMware Workspace ONE Access SSTI 漏洞(CVE-2022-22954)                  /pocs/web/vmware/CVE_2022_22954.py
 2022.7.13   版本更新 v2.0.3 ，界面优化，显示current target和current poc
             新增POC     Weaver-E-Cology-getSqlData-sqli                              /pocs/web/weaver/weaver_ecology_getsqldata_sqli.py

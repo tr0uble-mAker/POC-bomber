@@ -1,3 +1,5 @@
+2022.7.22   新增POC/EXP 海康威视 未授权RCE(CVE-2021-36260)                                   /pocs/web/hikvision/CVE_2021_26260.py
+            新增POC/EXP 海康威视 未授权访问(CVE-2017-7921)                                  /pocs/web/hikvision/CVE_2017_7921.py
 2022.7.21   新增POC     致远OA Session泄露(thirdpartyController.do)                           /pocs/web/seeyon/seeyon_thirdpartycontroller_getshell.py
 2022.7.16   新增POC/EXP VMware Workspace ONE Access SSTI 漏洞(CVE-2022-22954)                  /pocs/web/vmware/CVE_2022_22954.py
 2022.7.13   版本更新 v2.0.3 ，界面优化，显示current target和current poc

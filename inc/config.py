@@ -4,7 +4,7 @@
 output_path = r''
 
 # 线程池最大数量
-max_thread = 300
+max_thread = 30
 
 
 ## Dnslog 配置(用于检测无回显rce)

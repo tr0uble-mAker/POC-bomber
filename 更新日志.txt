@@ -1,4 +1,5 @@
-2022.7.27   新增POC     Memcahe 未授权访问                                              /pocs/ports/memcache_unauth_11211.py
+2022.7.27   新增POC     蓝凌OA custom.jsp 任意文件读取漏洞                                     /pocs/web/landray/landray_oa_custom_jsp_fileread.py
+            新增POC     Memcahe 未授权访问                                              /pocs/ports/memcache_unauth_11211.py
             新增POC     H2-Database-Console 未授权访问                                     /pocs/web/h2database/h2console_unauth.py
 2022.7.26   新增POC     Rsync 未授权访问                                                 /pocs/ports/rsync_unauth_873.py
 2022.7.22   新增POC/EXP 海康威视 未授权RCE(CVE-2021-36260)                                   /pocs/web/hikvision/CVE_2021_26260.py

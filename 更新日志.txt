@@ -1,3 +1,4 @@
+2022.8.9    修复POC     Spring Framework 远程命令执行漏洞(CVE-2022-22965)                                 /pocs/framework/spring/CVE_2022_22965.py
 2022.7.30   新增POC/EXP 帆软报表 V9 design_save_svg 任意文件覆盖文件上传                                 /pocs/web/fanruan/fanruan_oa_v9_fileupload.py     
             新增POC     通达OA v2017 video_file.php 任意文件下载漏洞                               /pocs/web/tongda/tongda_videofile_fileread.py
 2022.7.27   新增POC     蓝凌OA custom.jsp 任意文件读取漏洞                                     /pocs/web/landray/landray_oa_custom_jsp_fileread.py

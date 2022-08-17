@@ -1,4 +1,5 @@
-2022.8.18   修复POC     通达OA 任意用户登录漏洞
+2022.8.18   新增POC     通达OA sql注入(/general/reportshop/utils/get_datas.php)                 /pocs/web/tongda/tongda_sqli_getdata_php.py
+            修复POC     通达OA 任意用户登录漏洞
                         速率问题 memcache_unauth_11211.py，zookeeper_unauthorized.py，rsync_unauth_873.py
 2022.8.9    修复POC     Spring Framework 远程命令执行漏洞(CVE-2022-22965)                                 /pocs/framework/spring/CVE_2022_22965.py
 2022.7.30   新增POC/EXP 帆软报表 V9 design_save_svg 任意文件覆盖文件上传                                 /pocs/web/fanruan/fanruan_oa_v9_fileupload.py     

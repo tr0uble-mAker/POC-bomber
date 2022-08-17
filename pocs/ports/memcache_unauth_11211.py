@@ -5,6 +5,7 @@ def verify(url):
     relsult = {
         'name': 'Memcahe 未授权访问',
         'url': url,
+        'port': 11211,
         'vulnerable': False,
         'attack': False,
         'about': 'https://blog.csdn.net/chest_/article/details/105808673, https://blog.csdn.net/qq_23936389/article/details/81256118',
@@ -12,8 +13,12 @@ def verify(url):
     timeout = 3
     oH = urlparse(url)
     a = oH.netloc.split(':')
-    port = 11211        # memcache默认端口11211
+    port = relsult['port']        # memcache默认端口
     host = a[0]
+    if is_open(host, port):
+        pass
+    else:
+        return relsult
     payload = b'stats\r\n'  # 发送的数据
     s = socket.socket()
     socket.setdefaulttimeout(timeout)  # 设置超时时间
@@ -24,7 +29,16 @@ def verify(url):
         s.close()
         if response and 'STAT version' in response:
             relsult['vulnerable'] = True
-            relsult['port'] = port
             return relsult
     except:
         return relsult
+
+def is_open(host, port):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        s.settimeout(1.5)
+        s.connect((host, int(port)))
+        s.shutdown(2)
+        return True
+    except:
+        return False

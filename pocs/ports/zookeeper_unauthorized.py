@@ -9,15 +9,20 @@ def verify(url):
         'attack': False,
         'about': 'https://www.cnblogs.com/stuka/p/14716926.html',
     }
+    timeout = 3
+    oH = urlparse(url)
+    host = oH.netloc.split(':')[0]
+    port1 = 2181
+    port2 = 2182
+    if is_open(host, port1) or is_open(host, port2):
+        pass
+    else:
+        return relsult
     try:
-        oH = urlparse(url)
-        host = oH.netloc.split(':')[0]
-        port1 = 2181
-        port2 = 2182
-        if check(host, port1, 3):
+        if check(host, port1, timeout):
             relsult['vulnerable'] = True
             relsult['port'] = port1
-        if check(host, port2, 3):
+        if check(host, port2, timeout):
             relsult['vulnerable'] = True
             relsult['port'] = port2
         return relsult
@@ -39,3 +44,12 @@ def check(ip, port, timeout):
     except:
         return False
 
+def is_open(host, port):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        s.settimeout(1.5)
+        s.connect((host, int(port)))
+        s.shutdown(2)
+        return True
+    except:
+        return False

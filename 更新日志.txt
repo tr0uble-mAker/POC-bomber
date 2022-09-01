@@ -1,3 +1,4 @@
+2022.9.1    新增POC     Laravel DEBUG 敏感数据泄露(CVE-2017-16894)                                   /pocs/framework/laravel/CVE_2017_16894.py
 2022.8.27   新增POC     Zabbix SAML 未授权访问(CVE-2022-23131)                                     /pocs/web/zabbix/CVE_2022_23131.py
             新增POC     用友NC 任意文件读取(/NCFindWeb)                                   /pocs/web/yongyou/yongyou_nc-find-web_fileread.py
 2022.8.18   新增POC     通达OA sql注入(/general/reportshop/utils/get_datas.php)                 /pocs/web/tongda/tongda_sqli_getdata_php.py

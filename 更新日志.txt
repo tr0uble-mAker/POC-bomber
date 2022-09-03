@@ -1,3 +1,4 @@
+2022.9.3    修复POC     Spring Cloud Gateway Actuator API SpEL 代码注入 (CVE-2022-22947)
 2022.9.1    新增POC     Laravel DEBUG 敏感数据泄露(CVE-2017-16894)                                   /pocs/framework/laravel/CVE_2017_16894.py
             修复POC     CVE-2021-21972 vSphere Client RCE
 2022.8.27   新增POC     Zabbix SAML 未授权访问(CVE-2022-23131)                                     /pocs/web/zabbix/CVE_2022_23131.py

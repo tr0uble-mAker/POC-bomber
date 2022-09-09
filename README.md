@@ -10,6 +10,11 @@
 POC bomber 的poc支持weblogic，tomcat，apache，jboss，nginx，struct2，thinkphp2x3x5x，spring，redis，jenkins，php语言漏洞，shiro，泛微OA，致远OA，通达OA等易受攻击组件的漏洞检测，支持调用dnslog平台检测无回显的rce(包括log4j2的检测)，支持单个目标检测和批量检测，程序采用高并发线程池，支持自定义导入poc/exp，并能够生成漏洞报告  
 POC bomber默认使用验证模式进行poc的验证，如返回结果中attack的值为True时，可以加参数(--attack)进入攻击模式直接调用exp进行攻击(需要指定poc文件名)，达到一键getshell
 
+## 😄 红队专版-RedTeam 3.0
+追求更快的速度？更稳定的框架？更低的资源占用？更高的检测效率？更多的poc/exp集成利用？  
+尽请期待 POC-bomber RedTeam 3.0，目前仅限内部测试中，请持续关注项目更新。
+
+
 
 ## 💻 Screenshots    
 #### 🏆 验证模式

@@ -1,3 +1,4 @@
+2022.9.13   新增POC     Dahua IPC/VTH/VTO devices Authentication Bypas(CVE-2021-33044)            /pocs/web/dahua/CVE_2021_33044.py
 2022.9.3    修复POC     Spring Cloud Gateway Actuator API SpEL 代码注入 (CVE-2022-22947)
             修复POC     CVE-2021-40870 Aviatrix-Controller 远程代码执行
 2022.9.1    新增POC     Laravel DEBUG 敏感数据泄露(CVE-2017-16894)                                   /pocs/framework/laravel/CVE_2017_16894.py

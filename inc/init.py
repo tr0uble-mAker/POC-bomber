@@ -40,10 +40,10 @@ def get_filename_by_path(path):         # 根据路径获取文件名
     return filename
 
 
-def get_poc_modole_list():              # 调用此函数获取 /pocs 下的全部 poc
+def get_poc_modole_list(default_path=""):              # 默认调用此函数获取 /pocs 下的全部 poc，及根据传入路径获取文件夹全部poc
     poc_module_list = []
     current_path = os.path.abspath('.')
-    pocs_base_path = os.path.join(current_path, 'pocs')
+    pocs_base_path = os.path.join(current_path, "pocs" + default_path)
     poc_path_list = get_dir_files(pocs_base_path)
     for poc_path in poc_path_list:
         poc_path = poc_path.replace(current_path, '')
@@ -56,6 +56,10 @@ def get_poc_modole_list():              # 调用此函数获取 /pocs 下的全�
 
 
 def get_poc_modole_list_by_search(search_keys_list):     # 此函数通过搜索poc文件名调用相应的poc, 传入poc文件名列表, 返回由poc对象的列表
+    for search_key in search_keys_list:
+        if "/" in search_key:
+            poc_module_list = get_poc_modole_list(search_key)
+            return poc_module_list
     search_flag = True
     poc_modole_list = []
     current_path = os.path.abspath('.')

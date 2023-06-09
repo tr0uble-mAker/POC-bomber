@@ -18,8 +18,9 @@ POC-bomber的 v3.0.0 版本，拥有更快的扫描效率，修复因单个poc�
 ## 💻 Screenshots    
 #### 🏆 验证模式
         python3 pocbomber.py -u http://xxx.xxx
-![image](https://user-images.githubusercontent.com/71172892/168099161-f46a54f7-562b-4ba5-a751-1d65492b17d9.png)
+        
 
+![image](https://github.com/tr0uble-mAker/POC-bomber/assets/71172892/92c7af5b-b9b1-4339-93fb-e7cf96acde1b.png)
 <img width="1079" alt="image" src="https://github.com/tr0uble-mAker/POC-bomber/assets/71172892/c5530be4-d5aa-452b-8c95-11aaabf3a681">
 
 ![verify模试演示](https://user-images.githubusercontent.com/71172892/148684886-98b0f1ff-76f5-48d3-8d2d-932635392a33.gif)

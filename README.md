@@ -11,7 +11,7 @@ POC bomber 的poc支持weblogic，tomcat，apache，jboss，nginx，struct2，th
 POC bomber默认使用验证模式进行poc的验证，如返回结果中attack的值为True时，可以加参数(--attack)进入攻击模式直接调用exp进行攻击(需要指定poc文件名)，达到一键getshell
 
 ## 😄 红队专版-RedTeam 3.0
-POC-bomber的 v3.0.0 版本，拥有更快的扫描效率，修复因单个poc造成的卡顿问题和各若干bug，增加彩色输出和进度显示，支持指定poc目录，适合hvv快节奏，增加2022部分已公开漏洞的poc。
+POC-bomber的 v3.0.0 版本，拥有更快的扫描效率，修复因单个poc造成的卡顿问题和各若干bug，增加彩色输出和进度显示，支持指定poc目录，适合hvv快节奏，增加2022部分已公开漏洞的poc。支持自建dnslog服务器，在配置自己的域名后可以利用pocbomber在vps开启一个dnslog平台，进行部分漏洞dns带外检测。
 
 
 
@@ -19,13 +19,18 @@ POC-bomber的 v3.0.0 版本，拥有更快的扫描效率，修复因单个poc�
 #### 🏆 验证模式
         python3 pocbomber.py -u http://xxx.xxx
 ![image](https://user-images.githubusercontent.com/71172892/168099161-f46a54f7-562b-4ba5-a751-1d65492b17d9.png)
-![image](https://user-images.githubusercontent.com/71172892/147481630-f8b94566-572f-4d89-a874-dc01f5041377.png)
+
+<img width="1079" alt="image" src="https://github.com/tr0uble-mAker/POC-bomber/assets/71172892/c5530be4-d5aa-452b-8c95-11aaabf3a681">
+
 ![verify模试演示](https://user-images.githubusercontent.com/71172892/148684886-98b0f1ff-76f5-48d3-8d2d-932635392a33.gif)
 
 
 #### ⚡️ 攻击模式
         python3 pocbomber.py -u http://xxx.xxx --poc="thinkphp2_rce.py" --attack
-![image](https://user-images.githubusercontent.com/71172892/147629887-def9d18e-f6aa-466a-ab2c-2538752b82aa.png)
+        
+
+<img width="1161" alt="image" src="https://github.com/tr0uble-mAker/POC-bomber/assets/71172892/29cd33d1-fb53-4b68-8f4c-5d85b9ce02a4">
+
 ![image](https://user-images.githubusercontent.com/71172892/148206720-86f77246-301c-481f-a16c-b36047f72d7c.png)
 ![attack模式演示](https://user-images.githubusercontent.com/71172892/148684097-67b59320-6758-458d-ac6b-ae219c327924.gif)
 
